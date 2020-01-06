@@ -1,0 +1,59 @@
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="Save(userForm.value)">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="name"><b>First Name</b></label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter Firstname"
+          formControlName="firstname"
+        />
+      </div>
+      <div class="col-md-4">
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter lastname"
+          formControlName="lastname"
+        />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label class="form-check-label">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          formControlName="newsLetterCheck"
+          id=""
+          value="checkedValue"
+          unChecked
+        />
+        NewsLetter
+      </label>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group" formGroupName="userLogin">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter Email "
+            formControlName="userEmail"
+          />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group" formGroupName="userLogin">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Enter Password"
+            formControlName="userPassword"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

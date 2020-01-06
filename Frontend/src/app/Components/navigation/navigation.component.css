@@ -1,0 +1,60 @@
+.nav-item .home {
+  color: white;
+  padding-right: 25px;
+}
+.home:hover {
+  background-color: lightblue;
+}
+.nav-item .products {
+  color: white;
+  padding-right: 25px;
+}
+.nav-item .contact {
+  color: white;
+  padding-right: 25px;
+}
+.nav-item .register {
+  color: white;
+  padding-right: 25px;
+}
+.nav-item .login {
+  color: white;
+  padding-right: 25px;
+}
+.nav-item .about {
+  color: white;
+  padding-right: 25px;
+}
+
+.searchbar {
+  padding-top: 5px;
+  padding-left: 320px;
+}
+
+.searchbox {
+  height: 40px;
+  width: 190px;
+}
+
+.button {
+  height: 40px;
+  width: 40px;
+  padding-top: 2px;
+}
+.fa-search {
+  margin-left: -17px;
+  padding-right: -2px;
+}
+.navbar-nav {
+  padding-left: 50px;
+  font-size: 20px;
+}
+
+.logo {
+  height: 50px;
+}
+
+.navbar {
+  width: 1920px;
+  background-color: rgb(34, 34, 34);
+}

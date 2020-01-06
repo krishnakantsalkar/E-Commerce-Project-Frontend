@@ -1,0 +1,75 @@
+/* Background Image customization */
+body,
+html {
+  width: 1920px;
+  height: 1080px;
+  background-image: url("../../../../assets/img/stock_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+  margin-right: 0px;
+  overflow-x: hidden;
+}
+
+/* About Content */
+.content {
+  padding: 10px 30px 10px 5px;
+  background: white;
+  width: 50%;
+}
+
+/* H1 tag of "About" */
+h1 {
+  color: white;
+}
+/* paragraph tag  */
+p {
+  color: black;
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+/* vertical line besides name */
+.vertical-line {
+  border-left: 5px solid grey;
+  height: 100px;
+  /* margin-right: -100px; */
+}
+
+/* Name and designation */
+.right-content {
+  margin-left: -280px;
+  padding-top: 20px;
+}
+
+/* Card section padding */
+.card-section {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* Font-awesome icons and links to my social networks */
+.instagram {
+  font-size: 40px;
+}
+.fa-instagram {
+  color: red;
+}
+.github {
+  font-size: 40px;
+}
+.fa-github {
+  color: rgb(51, 51, 51);
+}
+.telegram {
+  font-size: 40px;
+}
+.fa-telegram {
+  color: rgb(32, 133, 201);
+}
+.whatsapp {
+  font-size: 40px;
+}
+.fa-whatsapp {
+  color: green;
+}
