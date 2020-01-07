@@ -1,59 +1,228 @@
-<div class="container">
-  <form [formGroup]="userForm" (ngSubmit)="Save(userForm.value)">
-    <div class="row">
-      <div class="col-md-4">
-        <label for="name"><b>First Name</b></label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Enter Firstname"
-          formControlName="firstname"
-        />
-      </div>
-      <div class="col-md-4">
-        <label for="lastname">Last Name</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Enter lastname"
-          formControlName="lastname"
-        />
-      </div>
-    </div>
-    <div class="col-md-4">
-      <label class="form-check-label">
-        <input
-          type="checkbox"
-          class="form-check-input"
-          formControlName="newsLetterCheck"
-          id=""
-          value="checkedValue"
-          unChecked
-        />
-        NewsLetter
-      </label>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="form-group" formGroupName="userLogin">
-          <input
-            type="email"
-            class="form-control"
-            placeholder="Enter Email "
-            formControlName="userEmail"
-          />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!-- Card area begin -->
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <!-- Card-header -->
+          <header class="card-header">
+            <a
+              href=""
+              class="float-right btn btn-outline-primary mt-1"
+              routerLink="/UserLogin"
+              >Log in</a
+            >
+            <h4 class="card-title mt-2">Sign up</h4>
+          </header>
+          <!-- Card-header end -->
+
+          <!-- Card-body -->
+          <article class="card-body">
+            <form [formGroup]="userForm" (ngSubmit)="Save(userForm.value)">
+              <!-- Form row  -->
+              <!-- First Name -->
+              <div class="form-row">
+                <div class="col form-group">
+                  <label>First name </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder=""
+                    formControlName="firstname"
+                    [class.is-valid]="userForm.controls.firstname.valid"
+                    [class.is-invalid]="
+                      !userForm.controls.firstname.valid && submitted
+                    "
+                  />
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please choose a username.
+                  </div>
+                  <div
+                    class="alert alert-danger"
+                    *ngIf="
+                      userForm.controls.firstname.hasError('required') &&
+                      userForm.controls.firstname.touched
+                    "
+                  >
+                    firstname is required*
+                  </div>
+                </div>
+
+                <!-- First name end -->
+                <!-- Last name -->
+                <div class="col form-group">
+                  <label>Last name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder=" "
+                    formControlName="lastname"
+                    [class.is-valid]="userForm.controls.lastname.valid"
+                    [class.is-invalid]="
+                      userForm.controls.lastname.invalid && submitted
+                    "
+                  />
+                  <div class="valid-feedback">
+                    looking good!
+                  </div>
+                  <div class="invalid-feedback">
+                    min 2 letters required!
+                  </div>
+                  <div
+                    class="alert alert-danger"
+                    *ngIf="
+                      userForm.controls.lastname.hasError('required') &&
+                      userForm.controls.lastname.touched
+                    "
+                  >
+                    lastname is required!
+                  </div>
+                </div>
+                <!-- Last name end -->
+              </div>
+              <!-- form-row end-->
+
+              <!-- form-group end.// -->
+              <!-- newsletter -->
+              <div class="form-group">
+                <label class="form-check-inline form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    formControlName="newsLetterCheck"
+                    id="1"
+                    value="checkedValue"
+                    unChecked
+                  />
+                  NewsLetter
+                </label>
+              </div>
+              <!-- newsletter end -->
+              <!-- User login form group -->
+              <div formGroupName="userLogin">
+                <div class="form-group">
+                  <label>Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder=""
+                    formControlName="userEmail"
+                    [class.is-valid]="
+                      userForm.controls.userLogin.controls.userEmail.valid
+                    "
+                    [class.is-invalid]="
+                      userForm.controls.userLogin.controls.userEmail.invalid &&
+                      submitted
+                    "
+                  />
+                  <div class="valid-feedback">
+                    looking good!
+                  </div>
+                  <div class="invalid-feedback">
+                    enter correct email address!
+                  </div>
+                  <div
+                    class="alert alert-danger"
+                    *ngIf="
+                      userForm.controls.userLogin.controls.userEmail.hasError(
+                        'required'
+                      ) &&
+                      userForm.controls.userLogin.controls.userEmail.touched
+                    "
+                  >
+                    Email Address is required!
+                  </div>
+                  <small class="form-text text-muted"
+                    >We'll never share your email with anyone else.</small
+                  >
+                </div>
+                <div class="form-group">
+                  <label>Create password</label>
+                  <input
+                    class="form-control"
+                    type="password"
+                    formControlName="userPassword"
+                    [class.is-valid]="
+                      userForm.controls.userLogin.controls.userPassword.valid
+                    "
+                    [class.is-invalid]="
+                      userForm.controls.userLogin.controls.userPassword
+                        .invalid && submitted
+                    "
+                  />
+                  <div class="valid-feedback">
+                    looking good!
+                  </div>
+                  <div class="invalid-feedback">
+                    please choose a better password!
+                  </div>
+                  <div
+                    class="alert alert-danger"
+                    *ngIf="
+                      userForm.controls.userLogin.controls.userPassword.hasError(
+                        'required'
+                      ) &&
+                      userForm.controls.userLogin.controls.userPassword.touched
+                    "
+                  >
+                    password is required!
+                  </div>
+                </div>
+              </div>
+              <!-- User Login form-group end -->
+              <!-- terms accept check -->
+              <div class="label">
+                <label class="form-check-inline form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    formControlName="termsAcceptCheck"
+                    id="2"
+                    value="checkedValue"
+                    unChecked
+                  />
+                  Accept Terms & Conditions
+                </label>
+              </div>
+              <!-- terms accept check end-->
+              <!-- Submit button -->
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">
+                  Register
+                </button>
+              </div>
+              <!-- submit button end-->
+              <!-- card footer text -->
+              <small class="text-muted"
+                >Please tick above option to confirm that you accept our <br />
+                Terms of use and Privacy Policy.</small
+              >
+              <!-- card footer text end -->
+            </form>
+          </article>
+          <!-- card-body end .// -->
+
+          <div class="border-top card-body text-center">
+            Have an account?
+            <a href="" class="link" routerLink="/UserLogin">Log In</a>
+          </div>
         </div>
+        <!-- card.// -->
       </div>
-      <div class="col-md-4">
-        <div class="form-group" formGroupName="userLogin">
-          <input
-            type="password"
-            class="form-control"
-            placeholder="Enter Password"
-            formControlName="userPassword"
-          />
-        </div>
-      </div>
+      <!-- col.//-->
     </div>
-  </form>
-</div>
+    <!-- row.//-->
+
+    <!--container end.//-->
+  </body>
+</html>

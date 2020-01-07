@@ -5,13 +5,15 @@
 .lastname {
   float: left; */
 
-.btn {
-  float: left;
+body,
+html {
+  background-image: url("../../../../assets/img/stock_background.jpg");
+  width: 1920px;
+  height: 1080px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.first {
-  float: left;
-}
-.last {
-  float: left;
+.card {
+  margin-top: 50px;
 }
