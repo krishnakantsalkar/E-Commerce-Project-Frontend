@@ -1,0 +1,12 @@
+body,
+html {
+  background-image: url("../../../../assets/img/stock_background.jpg");
+  width: 1920px;
+  height: 1080px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card {
+  margin-top: 50px;
+}

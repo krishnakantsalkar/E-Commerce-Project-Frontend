@@ -1,37 +1,113 @@
-<p>user-login works!</p>
-
-<div class="container">
-  <form [formGroup]="newLogin" (ngSubmit)="Save(newLogin.value)">
-    <div class="form-group row" formGroupName="userLogin">
-      <label class="col-sm-1-12 col-form-label">Email</label>
-      <div class="col-sm-1-12">
-        <input
-          type="email"
-          class="form-control"
-          name="inputName"
-          id="email"
-          placeholder="enter Email id"
-          formControlName="userEmail"
-        />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <header class="card-header">
+            <a
+              href=""
+              class="float-right btn btn-outline-primary mt-1"
+              routerLink="/UserRegistration"
+              >Sign up</a
+            >
+            <h4 class="card-title mt-2">Login</h4>
+          </header>
+          <article class="card-body">
+            <form [formGroup]="newLogin" (ngSubmit)="Save(newLogin.value)">
+              <div class="form-row">
+                <div class="col form-group" formGroupName="userLogin">
+                  <label>Email Id</label>
+                  <input
+                    class="form-control email-tag"
+                    type="email"
+                    placeholder="Enter Email ID"
+                    formControlName="userEmail"
+                    [class.is-valid]="
+                      newLogin.controls.userLogin.controls.userEmail.valid
+                    "
+                    [class.is-invalid]="
+                      !newLogin.controls.userLogin.controls.userEmail.valid &&
+                      submitted
+                    "
+                  />
+                  <div class="valid-feedback">
+                    looking good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Check entered email!
+                  </div>
+                  <div
+                    class="alert alert-danger"
+                    *ngIf="
+                      newLogin.controls.userLogin.controls.userEmail.hasError(
+                        'required'
+                      ) &&
+                      newLogin.controls.userLogin.controls.userEmail.touched
+                    "
+                  >
+                    Email id is required!
+                  </div>
+                  <br />
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input
+                      class="form-control password-tag"
+                      type="password"
+                      placeholder="Enter Password"
+                      formControlName="userPassword"
+                      [class.is-valid]="
+                        newLogin.controls.userLogin.controls.userPassword.valid
+                      "
+                      [class.is-invalid]="
+                        !newLogin.controls.userLogin.controls.userPassword
+                          .valid && submitted
+                      "
+                    />
+                    <div class="valid-feedback">
+                      looking good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Check your password!
+                    </div>
+                    <div
+                      class="alert alert-danger"
+                      *ngIf="
+                        newLogin.controls.userLogin.controls.userPassword.hasError(
+                          'required'
+                        ) &&
+                        newLogin.controls.userLogin.controls.userPassword
+                          .touched
+                      "
+                    >
+                      Password is required!
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="submit"
+                      class="btn btn-primary float-right"
+                      [disabled]="!newLogin.valid"
+                    >
+                      Log In
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </article>
+          <div class="border-top card-body text-center">
+            Don't have an account yet?
+            <a href="" class="link" routerLink="/UserRegistration">Sign up</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="form-group row" formGroupName="userLogin">
-      <label class="col-sm-1-12 col-form-label">password</label>
-      <div class="col-sm-1-12">
-        <input
-          type="password"
-          class="form-control"
-          name="password"
-          id="inputName"
-          placeholder="enter password"
-          formControlName="userPassword"
-        />
-      </div>
-    </div>
-    <div class="form-group row">
-      <div class="offset-sm-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Action</button>
-      </div>
-    </div>
-  </form>
-</div>
+  </body>
+</html>
