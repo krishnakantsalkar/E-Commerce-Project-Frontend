@@ -4,6 +4,7 @@ import { IuserReg } from "../../../Shared/Model/usersRegistration";
 import { userRegisterData } from "../../../Shared/Services/userRegisterService";
 import { Router } from "@angular/router";
 import { HttpResponse, HttpErrorResponse } from "@angular/common/http";
+import { WOW } from "wowjs/dist/wow.min";
 
 @Component({
   selector: "app-user-registration",
@@ -22,6 +23,7 @@ export class UserRegistrationComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    new WOW().init(); // Wow Animations in HTML
     this.userForm = this.fb.group({
       //main form group
       firstname: [

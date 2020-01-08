@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { IcontactUs } from "../../../Shared/Model/contactUs";
 import { contactUsData } from "../../../Shared/Services/contactUsServices";
+import { WOW } from "wowjs/dist/wow.min";
 
 @Component({
   selector: "app-contact-us",
@@ -20,6 +21,7 @@ export class ContactUsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    new WOW().init(); // WOW animations in HTML
     this.contactUs_form = this.fb.group({
       name: [
         "",
