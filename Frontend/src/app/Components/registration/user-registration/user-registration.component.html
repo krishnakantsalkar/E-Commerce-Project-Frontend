@@ -69,7 +69,7 @@
                     formControlName="lastname"
                     [class.is-valid]="userForm.controls.lastname.valid"
                     [class.is-invalid]="
-                      userForm.controls.lastname.invalid && submitted
+                      !userForm.controls.lastname.valid && submitted
                     "
                   />
                   <div class="valid-feedback">
@@ -121,7 +121,7 @@
                       userForm.controls.userLogin.controls.userEmail.valid
                     "
                     [class.is-invalid]="
-                      userForm.controls.userLogin.controls.userEmail.invalid &&
+                      !userForm.controls.userLogin.controls.userEmail.valid &&
                       submitted
                     "
                   />
@@ -156,8 +156,8 @@
                       userForm.controls.userLogin.controls.userPassword.valid
                     "
                     [class.is-invalid]="
-                      userForm.controls.userLogin.controls.userPassword
-                        .invalid && submitted
+                      !userForm.controls.userLogin.controls.userPassword
+                        .valid && submitted
                     "
                   />
                   <div class="valid-feedback">
@@ -197,7 +197,11 @@
               <!-- terms accept check end-->
               <!-- Submit button -->
               <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-block"
+                  [disabled]="!userForm.valid"
+                >
                   Register
                 </button>
               </div>

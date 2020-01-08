@@ -44,7 +44,7 @@ export class UserRegistrationComponent implements OnInit {
       userLogin: this.fb.group({
         //sub form group
         userEmail: ["", [Validators.required, Validators.email]],
-        userPassword: ["", [Validators.required]]
+        userPassword: ["", [Validators.required, Validators.minLength(8)]]
       }),
       termsAcceptCheck: ["", [Validators.required]]
       // sendConfirmationMail?: []          // optional send confirmation mail check backend APIs
