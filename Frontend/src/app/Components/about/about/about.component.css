@@ -12,16 +12,10 @@ html {
 }
 
 /* About Content */
-.content {
-  padding: 10px 30px 10px 5px;
-  background: white;
-  width: 50%;
+.about-section {
+  margin-top: 30px;
 }
 
-/* H1 tag of "About" */
-h1 {
-  color: white;
-}
 /* paragraph tag  */
 p {
   color: black;
@@ -38,7 +32,7 @@ p {
 
 /* Name and designation */
 .right-content {
-  margin-left: -280px;
+  margin-left: -450px;
   padding-top: 20px;
 }
 
@@ -72,4 +66,8 @@ p {
 }
 .fa-whatsapp {
   color: green;
+}
+
+.common {
+  margin-left: 200px;
 }
