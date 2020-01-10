@@ -1,21 +1,210 @@
-.card-header {
-  background-color: rgb(60, 173, 211);
-  color: black;
-  font-size: 20px;
-}
-
+/*//////////// Page Background ////////////*/
 body,
 html {
   width: 1920px;
-  height: 1080px;
   background-image: url("../../../assets/img/stock_background.jpg");
   background-size: auto;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: fixed;
   margin-right: 0px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
-.container {
+/*//////////// Carousel customizations ////////////*/
+.carousel {
+  margin-top: 50px;
+}
+
+.carousel-item {
+  height: fit-content;
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
+
+h2 span {
+  background-color: white;
+  color: black;
+}
+
+p span {
+  background-color: white;
+  color: black;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 200px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(96, 201, 233, 0.4);
+}
+
+/*//////////// Benefits Area ////////////*/
+.benefits-area {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+/* Benefits icons and colors */
+.icon1,
+.icon2,
+.icon3,
+.icon4 {
+  width: 250px;
+  height: 200px;
+  font-size: 50px;
+  background-color: yellow;
+  text-align: center;
+  font-weight: 200;
+  padding-top: 30px;
+  color: white;
+  border-radius: 5px;
+}
+
+.icon2 {
+  background-color: rgb(0, 153, 255);
+}
+.icon3 {
+  background-color: rgb(255, 0, 55);
+}
+.icon4 {
+  background-color: rgb(108, 66, 232);
+}
+
+.icon1:hover,
+.icon2:hover,
+.icon3:hover,
+.icon4:hover {
+  background-color: black;
+}
+
+/* ////////////  Product Area //////////// */
+.product-area-title {
+  color: black;
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  font-weight: 100;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Product area container background color */
+div.product-area .container {
+  background-color: white;
+  width: 75%;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-radius: 5px;
+}
+
+.single-product {
+  display: block;
+}
+.product-f-image {
+  position: relative;
+}
+
+/* shadow element to be shown on hover */
+.product-hover {
+  height: 243px;
+  width: 195px;
+  margin-left: 30px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+
+  border: 1px solid #ddd;
+}
+
+/* product links default position before hovering */
+.product-hover a.add-to-cart-link {
+  top: -25%;
+}
+
+.product-hover a.view-details-link {
+  bottom: -100%;
+}
+/* on hover product links transformation */
+.product-hover a {
+  background: none repeat scroll 0 0 #5a88ca;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  left: 10%;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  width: 80%;
+  z-index: 99;
+  transition: 0.4s;
+}
+/* marging between links and icon */
+.product-hover a i.fa {
+  margin-right: 5px;
+}
+
+/* shadow element default position before showing */
+.product-hover:after {
+  background: none repeat scroll 0 0 #000;
+  content: "";
+  height: 100%;
+  left: -100%;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: 0.4s;
+}
+
+/* shadow and link position after hover  */
+.single-product:hover .product-hover a.add-to-cart-link {
+  top: 28%;
+}
+.single-product:hover .product-hover a.view-details-link {
+  bottom: 28%;
+}
+.single-product:hover .product-hover:after {
+  left: 0;
+}
+
+/* Products link bg on hover */
+.product-hover a:hover {
+  background-color: black;
+}
+
+/*//////////// Footer Area ////////////*/
+.footer-area {
+  background-color: black;
+  color: white;
   padding-top: 40px;
+}
+
+div.copyright {
+  margin-top: -8px;
+  margin-bottom: 30px;
+}
+div.copyright i {
+  font-size: 20px;
+}
+div.copyright p {
+  font-weight: bold;
+}
+
+.fa-cc-mastercard,
+.fa-cc-discover,
+.fa-cc-visa,
+.fa-cc-paypal {
+  font-size: 40px;
+  margin-right: 20px;
+  margin-top: -20px;
 }
