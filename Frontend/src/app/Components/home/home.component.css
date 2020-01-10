@@ -13,7 +13,7 @@ html {
 
 /*//////////// Carousel customizations ////////////*/
 .carousel {
-  margin-top: 50px;
+  margin-top: 120px;
 }
 
 .carousel-item {
@@ -98,8 +98,9 @@ p span {
 div.product-area .container {
   background-color: white;
   width: 75%;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   padding-bottom: 50px;
+  padding-top: 20px;
   border-radius: 5px;
 }
 
@@ -180,6 +181,61 @@ div.product-area .container {
 /* Products link bg on hover */
 .product-hover a:hover {
   background-color: black;
+}
+
+/*/////////// Brand Logo Carousel ////////////*/
+
+div.brand-carousel .carousel {
+  margin-top: 50px;
+}
+.brand-carousel {
+  background-color: white;
+  width: 1500px;
+  height: 200px;
+}
+div.brand-carousel .carousel-inner {
+  padding-top: 40px;
+}
+
+div.brand-carousel .carousel-control-prev {
+  margin-bottom: -40px;
+  margin-left: -230px;
+}
+div.brand-carousel .carousel-control-next {
+  margin-bottom: -40px;
+  margin-right: -230px;
+}
+
+/*/////////// News article content ///////////*/
+div.articles-content {
+  margin-bottom: 40px;
+  margin-top: 60px;
+}
+
+div.article-area {
+  background-color: white;
+  height: 600px;
+  padding: 0 5px 0 5px;
+  margin-left: -380px;
+  margin-right: 100px;
+  border-radius: 5px;
+}
+div.content-area {
+  background-color: wheat;
+  height: 600px;
+  margin-left: -100px;
+  margin-right: -360px;
+  border-radius: 5px;
+}
+
+.news1,
+.news2,
+.news3,
+.news4 {
+  background-color: wheat;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 20px 10px;
 }
 
 /*//////////// Footer Area ////////////*/

@@ -1,3 +1,7 @@
+.navbar {
+  padding: 0 0 0 0;
+}
+
 /* Unordered list of Nav bar */
 ul {
   list-style-type: none;
@@ -54,4 +58,8 @@ li a:hover {
 
 .nav-bar {
   width: 1920px;
+}
+
+.cart {
+  margin-left: 400px;
 }
