@@ -12,6 +12,10 @@ const routes: Route[] = [
     component: HomeComponent
   },
   {
+    path: "Products",
+    loadChildren: "./Components/products/products.module#ProductsModule"
+  },
+  {
     path: "UserLogin",
     loadChildren: "./Components/login/login.module#LoginModule"
   },
