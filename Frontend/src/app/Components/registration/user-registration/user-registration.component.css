@@ -1,14 +1,7 @@
-/* .form-check-label {
-  float: left;
-  margin-top: -15px;
-}
-.lastname {
-  float: left; */
-
 body,
 html {
   background-image: url("../../../../assets/img/stock_background.jpg");
-  width: 1519px;
+  width: 100%;
   height: 1080px;
   background-size: cover;
   background-repeat: no-repeat;
