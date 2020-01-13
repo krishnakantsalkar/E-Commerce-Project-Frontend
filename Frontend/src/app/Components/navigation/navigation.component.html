@@ -1,41 +1,46 @@
 <nav class="navbar fixed-top">
   <div class="nav-bar">
     <ul class="mainLogo">
-      <a class="navbar-logo" href="#"
+      <a class="navbar-logo"
         ><img class="logo" src="../../../assets/img/mylogo.png"
       /></a>
       <li>
-        <a class="nav-link active" href="#" routerLink="/Home">
+        <a class="nav-link active" routerLink="/Home">
           <i class="fa fa-home fa-fw" aria-hidden="true"></i> Home
         </a>
       </li>
       <li>
-        <a class="nav-link products" href="#" routerLink="/Products"
+        <a class="nav-link products" routerLink="/Products"
           ><i class="fa fa-shopping-bag fa-fw"></i> Products</a
         >
       </li>
       <li>
-        <a class="nav-link contact" href="#" routerLink="/ContactUs"
+        <a class="nav-link contact" routerLink="/ContactUs"
           ><i class="fa fa-phone fa-fw" aria-hidden="true"></i> Contact Us</a
         >
       </li>
-      <li>
-        <a class="nav-link register" href="#" routerLink="/UserRegistration"
+      <li *ngIf="!checkStatus">
+        <a class="nav-link register" routerLink="/UserRegistration"
           ><i class="fa fa-user fa-fw" aria-hidden="true"></i> Register</a
         >
       </li>
-      <li>
-        <a class="nav-link login" href="#" routerLink="/UserLogin"
+      <li *ngIf="!checkStatus">
+        <a class="nav-link login" routerLink="/UserLogin"
           ><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i> Login</a
         >
       </li>
       <li>
-        <a class="nav-link about" href="#" routerLink="/About"
+        <a class="nav-link about" routerLink="/About"
           ><i class="fa fa-info fa-fw" aria-hidden="true"></i> About</a
         >
       </li>
+      <li class="logout" *ngIf="checkStatus">
+        <a class="nav-link " routerLink="" (click)="Logout()">
+          Logout
+        </a>
+      </li>
       <li class="cart">
-        <a class="nav-link " href="#" routerLink="">
+        <a class="nav-link " routerLink="">
           <i class="fa fa-cart-plus fa-fw" aria-hidden="true"></i>
           Cart
         </a>
