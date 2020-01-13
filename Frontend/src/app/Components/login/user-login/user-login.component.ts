@@ -13,6 +13,8 @@ import { WOW } from "wowjs/dist/wow.min";
 export class UserLoginComponent implements OnInit {
   public newLogin: FormGroup;
   public submitted: boolean;
+  public userId;
+  public validateError: string;
   constructor(
     private UL: userLoginData,
     private fb: FormBuilder,
@@ -36,13 +38,16 @@ export class UserLoginComponent implements OnInit {
     console.log(data);
     this.UL.Login(data).subscribe(
       item => {
-        alert("login successful!");
-        this.router.navigateByUrl("/Home");
-        console.log(item);
+        if (item.token) {
+          this.userId = item.token;
+          alert("login successful!");
+          this.router.navigateByUrl("/Home");
+          console.log(item);
+        }
       },
-      error => {
-        alert("Invalid Email or Password!");
-        console.log(error);
+      err => {
+        this.validateError = err.error.message;
+        alert("Invalid Email or password");
       }
     );
   }
