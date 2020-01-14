@@ -6,5 +6,25 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body></body>
+  <body>
+    <div class="container products">
+      <div class="card">
+        <header class="card-header">
+          <h3>Products</h3>
+        </header>
+        <article class="card-body">
+          <div class="row">
+            <div class="col-3" *ngFor="let prods of arrivedProducts">
+              {{ prods.name }}
+              <div class="image-area">
+                <img src="{{ prods.image }}" />
+              </div>
+              <hr />
+              <p>{{ prods.description }}</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
 </html>
