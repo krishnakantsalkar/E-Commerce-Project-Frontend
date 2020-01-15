@@ -11,7 +11,13 @@ import { Iproducts } from "../../../Shared/Model/products";
 })
 export class ProductsComponent implements OnInit {
   public arrivedProducts: Iproducts[];
+  public arrivedProducts1: Iproducts[];
+  public arrivedProducts2: Iproducts[];
+  public arrivedProducts3: Iproducts[];
+
   // public arrivedFiles: IfileUploads;
+
+  choice = 1;
 
   constructor(private products: productsData) {}
 
@@ -20,8 +26,23 @@ export class ProductsComponent implements OnInit {
       this.arrivedProducts = data;
       console.log(data);
     });
+    this.products.listProducts1().subscribe(data => {
+      this.arrivedProducts1 = data;
+      console.log(data);
+    });
+    this.products.listProducts2().subscribe(data => {
+      this.arrivedProducts2 = data;
+      console.log(data);
+    });
+    this.products.listProducts3().subscribe(data => {
+      this.arrivedProducts3 = data;
+      console.log(data);
+    });
     // this.products.getImage1().subscribe(data => {
     //   this.arrivedFiles = data;
     // });
+  }
+  setChoice(choice) {
+    this.choice = choice;
   }
 }
