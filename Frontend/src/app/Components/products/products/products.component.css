@@ -11,3 +11,57 @@ html {
 .products {
   margin-top: 100px;
 }
+
+.btn-danger,
+.btn-success,
+.btn-warning {
+  margin-left: 20px;
+}
+
+div.mobiles span,
+div.computers span,
+div.ac span,
+div.fridge span {
+  font-weight: bold;
+}
+p {
+  font-weight: 500;
+}
+.mobiles,
+.computers,
+.ac,
+.fridge {
+  border: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.mobiles:hover {
+  background-color: rgb(156, 153, 153);
+}
+
+div.mobiles a {
+  background: none repeat scroll 0 0 #5a88ca;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 80%;
+  z-index: 99;
+  transition: 0.4s;
+}
+
+div.mobiles a.add-to-cart-link {
+  margin-top: -30px;
+  margin-bottom: 5px;
+}
+div.mobiles a.view-details-link {
+  margin-bottom: 5px;
+}
+
+div.mobiles a:hover {
+  background-color: black;
+}

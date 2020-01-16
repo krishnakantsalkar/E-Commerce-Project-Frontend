@@ -25,27 +25,44 @@
           </button>
         </header>
         <div class="switch-case-Main" [ngSwitch]="choice">
-          <!-- Mobile Phones Sectin -->
+          <!-- Mobile Phones Section -->
           <article class="card-body">
             <div class="mobile-section" *ngSwitchCase="1">
               <div class="row">
                 <div class="col-3" *ngFor="let prods of arrivedProducts">
-                  {{ prods.name }}
-                  <br />
-                  <br />
-                  <div class="image-area">
-                    <img src="{{ prods.image }}" />
+                  <div class="mobiles" align="center">
+                    <span> {{ prods.name }}</span>
+                    <br />
+                    <br />
+                    <div class="image-area">
+                      <img src="{{ prods.image }}" />
+                    </div>
+                    <hr />
+                    <p>{{ prods.description }}</p>
+                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
+                    <div
+                      class="offer-price"
+                      *ngIf="prods.isTodayOffer === true"
+                    >
+                      Offer Price: <s>{{ prods.price }}</s> ₹{{
+                        prods.offerPrice + "/-"
+                      }}
+                    </div>
+                    <br />
+                    <br />
+                    <div class="mobile-shadow">
+                      <a href="#" class="add-to-cart-link"
+                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
+                      >
+
+                      <a href="#" class="view-details-link"
+                        ><i class="fa fa-link"></i> See details</a
+                      >
+                    </div>
                   </div>
+
                   <hr />
-                  <p>{{ prods.description }}</p>
-                  <div class="price">MRP: {{ prods.price + "/-" }}</div>
-                  <div class="offer-price" *ngIf="prods.isTodayOffer === true">
-                    <s>{{ prods.price }}</s> {{ prods.offerPrice }}
-                  </div>
-                  <br />
-                  <br />
                 </div>
-                <hr />
               </div>
             </div>
             <!-- Mobile section end -->
@@ -53,22 +70,30 @@
             <div class="pc-section" *ngSwitchCase="2">
               <div class="row">
                 <div class="col-3" *ngFor="let prods of arrivedProducts1">
-                  {{ prods.name }}
-                  <br />
-                  <br />
-                  <div class="image-area">
-                    <img src="{{ prods.image }}" />
+                  <div class="computers" align="center">
+                    <span>{{ prods.name }}</span>
+                    <br />
+                    <br />
+                    <div class="image-area">
+                      <img src="{{ prods.image }}" />
+                    </div>
+                    <hr />
+                    <p>{{ prods.description }}</p>
+                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
+                    <div
+                      class="offer-price"
+                      *ngIf="prods.isTodayOffer === true"
+                    >
+                      Offer Price: <s>{{ prods.price }}</s> ₹{{
+                        prods.offerPrice + "/-"
+                      }}
+                    </div>
+                    <br />
+                    <br />
                   </div>
+
                   <hr />
-                  <p>{{ prods.description }}</p>
-                  <div class="price">MRP: {{ prods.price + "/-" }}</div>
-                  <div class="offer-price" *ngIf="prods.isTodayOffer === true">
-                    <s>{{ prods.price }}</s> {{ prods.offerPrice }}
-                  </div>
-                  <br />
-                  <br />
                 </div>
-                <hr />
               </div>
             </div>
             <!-- pc section end -->
@@ -76,22 +101,28 @@
             <div class="ac-section" *ngSwitchCase="3">
               <div class="row">
                 <div class="col-3" *ngFor="let prods of arrivedProducts2">
-                  {{ prods.name }}
-                  <br />
-                  <br />
-                  <div class="image-area">
-                    <img src="{{ prods.image }}" />
+                  <div class="ac" align="center">
+                    <span> {{ prods.name }}</span>
+                    <br />
+                    <br />
+                    <div class="image-area">
+                      <img src="{{ prods.image }}" />
+                    </div>
+                    <hr />
+                    <p>{{ prods.description }}</p>
+                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
+                    <div
+                      class="offer-price"
+                      *ngIf="prods.isTodayOffer === true"
+                    >
+                      Offer Price: <s>{{ prods.price }}</s> ₹
+                      {{ prods.offerPrice + "/-" }}
+                    </div>
+                    <br />
+                    <br />
                   </div>
                   <hr />
-                  <p>{{ prods.description }}</p>
-                  <div class="price">MRP: {{ prods.price + "/-" }}</div>
-                  <div class="offer-price" *ngIf="prods.isTodayOffer === true">
-                    <s>{{ prods.price }}</s> {{ prods.offerPrice }}
-                  </div>
-                  <br />
-                  <br />
                 </div>
-                <hr />
               </div>
             </div>
             <!-- Ac section end -->
@@ -99,22 +130,29 @@
             <div class="fridge-section" *ngSwitchCase="4">
               <div class="row">
                 <div class="col-3" *ngFor="let prods of arrivedProducts3">
-                  {{ prods.name }}
-                  <br />
-                  <br />
-                  <div class="image-area">
-                    <img src="{{ prods.image }}" />
+                  <div class="fridge" align="center">
+                    <span>{{ prods.name }}</span>
+                    <br />
+                    <br />
+                    <div class="image-area">
+                      <img src="{{ prods.image }}" />
+                    </div>
+                    <hr />
+                    <p>{{ prods.description }}</p>
+                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
+                    <div
+                      class="offer-price"
+                      *ngIf="prods.isTodayOffer === true"
+                    >
+                      Offer Price: <s>{{ prods.price }}</s> ₹{{
+                        prods.offerPrice + "/-"
+                      }}
+                    </div>
+                    <br />
+                    <br />
                   </div>
                   <hr />
-                  <p>{{ prods.description }}</p>
-                  <div class="price">MRP: {{ prods.price + "/-" }}</div>
-                  <div class="offer-price" *ngIf="prods.isTodayOffer === true">
-                    <s>{{ prods.price }}</s> {{ prods.offerPrice }}
-                  </div>
-                  <br />
-                  <br />
                 </div>
-                <hr />
               </div>
             </div>
             <!-- Fridge section end -->
