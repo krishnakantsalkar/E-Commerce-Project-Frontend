@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { productsData } from "../../../Shared/Services/productsServices";
 import { Iproducts } from "../../../Shared/Model/products";
 // import { IfileUploads } from "../../../Shared/Model/fileUploads";
+import { WOW } from "wowjs/dist/wow.min"; //Enable WOW animations
 
 @Component({
   selector: "app-products",
@@ -22,6 +23,8 @@ export class ProductsComponent implements OnInit {
   constructor(private products: productsData) {}
 
   ngOnInit() {
+    new WOW({ live: false }).init(); //enable WOW animations
+
     this.products.listProducts().subscribe(data => {
       this.arrivedProducts = data;
       console.log(data);
