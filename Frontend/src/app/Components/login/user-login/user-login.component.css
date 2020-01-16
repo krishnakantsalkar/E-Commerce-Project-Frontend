@@ -8,6 +8,7 @@ html {
   background-size: cover;
   background-position: fixed;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .card {

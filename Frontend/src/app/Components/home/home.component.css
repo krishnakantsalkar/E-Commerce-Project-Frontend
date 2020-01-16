@@ -10,6 +10,7 @@ html {
   background-position: fixed;
   margin-right: 0px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /*//////////// Carousel customizations ////////////*/

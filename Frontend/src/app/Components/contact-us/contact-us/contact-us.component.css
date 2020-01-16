@@ -9,6 +9,7 @@ html {
   background-attachment: fixed;
   margin-right: 0px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .contact-us-section {
