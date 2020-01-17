@@ -37,11 +37,17 @@ p {
   padding-bottom: 10px;
 }
 
-.mobiles:hover {
+.mobiles:hover,
+.computers:hover,
+.ac:hover,
+.fridge:hover {
   background-color: rgb(156, 153, 153);
 }
 
-div.mobiles a {
+div.mobiles a,
+div.computers a,
+div.ac a,
+div.fridge a {
   background: none repeat scroll 0 0 #5a88ca;
   border-radius: 5px;
   color: #fff;
@@ -55,14 +61,23 @@ div.mobiles a {
   transition: 0.4s;
 }
 
-div.mobiles a.add-to-cart-link {
+div.mobiles a.add-to-cart-link,
+div.computers a.add-to-cart-link,
+div.ac a.add-to-cart-link,
+div.fridge a.add-to-cart-link {
   margin-top: -30px;
   margin-bottom: 5px;
 }
-div.mobiles a.view-details-link {
+div.mobiles a.view-details-link,
+div.computers a.view-details-link,
+div.ac a.view-details-link,
+div.fridge a.view-details-link {
   margin-bottom: 5px;
 }
 
-div.mobiles a:hover {
+div.mobiles a:hover,
+div.computers a:hover,
+div.ac a:hover,
+div.fridge a:hover {
   background-color: black;
 }
