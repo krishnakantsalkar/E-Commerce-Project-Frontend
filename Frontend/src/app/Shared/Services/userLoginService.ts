@@ -13,7 +13,7 @@ export class userLoginData {
   public header: HttpHeaders;
   public currentUsers: Observable<IuserLogin>;
   private loggedIn: BehaviorSubject<IuserLogin>;
-  public getUser: any = JSON.parse(localStorage.getItem("currentUser"));
+  public getUser: any;
 
   constructor(private http: HttpClient, private router: Router) {
     this.header = new HttpHeaders({ "Content-Type": "application/json" });
@@ -47,6 +47,7 @@ export class userLoginData {
 
   //Post Login services (My Profile)
   myProfile(): Observable<IuserReg> {
+    this.getUser = JSON.parse(localStorage.getItem("currentUser"));
     let sendReq = this.getUser.id;
     console.log(sendReq);
     return this.http.get<IuserReg>(this.getUsersApi + sendReq);
