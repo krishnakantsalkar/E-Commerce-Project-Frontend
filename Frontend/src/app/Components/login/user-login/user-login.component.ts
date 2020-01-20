@@ -22,7 +22,7 @@ export class UserLoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    new WOW().init(); // Wow Animations on Html
+    new WOW({ live: false }).init(); // Wow Animations on Html
     this.newLogin = this.fb.group({
       userLogin: this.fb.group({
         userEmail: ["", [Validators.required, Validators.email]],

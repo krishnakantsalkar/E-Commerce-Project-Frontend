@@ -23,7 +23,7 @@ export class UserRegistrationComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    new WOW().init(); // Wow Animations in HTML
+    new WOW({ live: false }).init(); // Wow Animations in HTML
     this.userForm = this.fb.group({
       //main form group
       firstname: [

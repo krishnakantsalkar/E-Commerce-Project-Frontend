@@ -21,7 +21,7 @@ export class ContactUsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    new WOW().init(); // WOW animations in HTML
+    new WOW({ live: false }).init(); // WOW animations in HTML
     this.contactUs_form = this.fb.group({
       name: [
         "",
