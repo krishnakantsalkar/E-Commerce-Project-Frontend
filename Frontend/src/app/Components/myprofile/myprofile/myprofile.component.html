@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" *ngIf="arrivedUsers">
+        <header class="card-header">
+          My Profile
+          <span style="float: right;">[Id: {{ arrivedUsers._id }}]</span>
+        </header>
+        <article class="card-body">
+          <div class="row">
+            <div class="col-8">
+              <div class="userinfo">
+                User Details-
+                <br /><br />
+                <span>First Name:</span>
+                <b> {{ arrivedUsers.firstname }}</b>
+                <br /><br />
+                <span>Last Name:</span>
+                <b> {{ arrivedUsers.lastname }}</b>
+                <br /><br />
+                <span>Email:</span>
+                <b> {{ arrivedUsers.userLogin.userEmail }}</b>
+              </div>
+            </div>
+            <div class="col-4">
+              <span>Profile Picture:</span>
+              <br /><br />
+              <img src="https://picsum.photos/150/150" />
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-8">
+              <div class="userinfo1">
+                <span>
+                  Subscribed to Newsletter!
+                  <i class="fa fa-check" aria-hidden="true"></i
+                ></span>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="userbio">
+                <div class="bio">
+                  <label>Bio</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Enter your Bio"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>

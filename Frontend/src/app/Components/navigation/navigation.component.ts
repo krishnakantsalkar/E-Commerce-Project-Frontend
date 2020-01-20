@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { userLoginData } from "../../Shared/Services/userLoginService";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-navigation",
@@ -8,7 +9,7 @@ import { userLoginData } from "../../Shared/Services/userLoginService";
 })
 export class NavigationComponent implements OnInit {
   public checkStatus: any;
-  constructor(private logoutMethod: userLoginData) {}
+  constructor(private logoutMethod: userLoginData, private router: Router) {}
 
   ngOnInit() {
     this.logoutMethod.currentUsers.subscribe(data => {
@@ -17,5 +18,6 @@ export class NavigationComponent implements OnInit {
   }
   Logout() {
     this.logoutMethod.Logout();
+    this.router.navigateByUrl("/Home");
   }
 }

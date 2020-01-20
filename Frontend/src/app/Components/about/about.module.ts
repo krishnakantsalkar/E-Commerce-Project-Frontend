@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { AboutComponent } from "./about/about.component";
-import { RouterModule, RoutesRecognized } from "@angular/router";
+import { RouterModule } from "@angular/router";
 import { About } from "./about-routes";
 
 @NgModule({

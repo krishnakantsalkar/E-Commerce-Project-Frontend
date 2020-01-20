@@ -33,6 +33,11 @@ const routes: Route[] = [
     path: "ContactUs",
     loadChildren: "./Components/contact-us/contact-us.module#ContactUsModule",
     canActivate: [authGuard]
+  },
+  {
+    path: "MyProfile",
+    loadChildren: "./Components/myprofile/myprofile.module#MyprofileModule",
+    canActivate: [authGuard]
   }
 ];
 
