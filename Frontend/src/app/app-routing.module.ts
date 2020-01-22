@@ -38,6 +38,24 @@ const routes: Route[] = [
     path: "MyProfile",
     loadChildren: "./Components/myprofile/myprofile.module#MyprofileModule",
     canActivate: [authGuard]
+  },
+
+  // Single Products Page Routing!
+
+  {
+    path: "Products/product1",
+    loadChildren:
+      "./Components/single-product1/single-product1.module#SingleProduct1Module"
+  },
+  {
+    path: "Products/product2",
+    loadChildren:
+      "./Components/single-product2/single-product2.module#SingleProduct2Module"
+  },
+  {
+    path: "Products/product3",
+    loadChildren:
+      "./Components/single-product3/single-product3.module#SingleProduct3Module"
   }
 ];
 
