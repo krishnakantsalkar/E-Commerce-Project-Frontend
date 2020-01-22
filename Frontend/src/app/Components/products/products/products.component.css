@@ -44,10 +44,14 @@ p {
   background-color: rgb(156, 153, 153);
 }
 
-div.mobiles a,
-div.computers a,
-div.ac a,
-div.fridge a {
+div.mobiles a.add-to-cart-link,
+div.computers a.add-to-cart-link,
+div.ac a.add-to-cart-link,
+div.fridge a.add-to-cart-link,
+div.mobiles a.view-details-link,
+div.computers a.view-details-link,
+div.ac a.view-details-link,
+div.fridge a.view-details-link {
   background: none repeat scroll 0 0 #5a88ca;
   border-radius: 5px;
   color: #fff;
@@ -75,9 +79,17 @@ div.fridge a.view-details-link {
   margin-bottom: 5px;
 }
 
-div.mobiles a:hover,
-div.computers a:hover,
-div.ac a:hover,
-div.fridge a:hover {
+div.mobiles a.add-to-cart-link:hover,
+div.computers a.add-to-cart-link:hover,
+div.ac a.add-to-cart-link:hover,
+div.fridge a.add-to-cart-link:hover,
+div.mobiles a.view-details-link:hover,
+div.computers a.view-details-link:hover,
+div.ac a.view-details-link:hover,
+div.fridge a.view-details-link:hover {
   background-color: black;
+}
+
+div.mobiles span:hover {
+  color: white;
 }
