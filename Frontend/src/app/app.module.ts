@@ -10,10 +10,11 @@ import { NavigationComponent } from "./Components/navigation/navigation.componen
 import { userLoginData } from "./Shared/Services/userLoginService"; // api consumption service
 import { HttpClientModule } from "@angular/common/http"; //Api consumption , user services
 
-import { FormsModule, ReactiveFormsModule } from "@angular/forms"; //Registration
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FloatingCartComponent } from './Components/floating-cart/floating-cart.component'; //Registration
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavigationComponent],
+  declarations: [AppComponent, HomeComponent, NavigationComponent, FloatingCartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
