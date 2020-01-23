@@ -4,6 +4,7 @@ import { productsData } from "../../../Shared/Services/productsServices";
 import { Iproducts } from "../../../Shared/Model/products";
 // import { IfileUploads } from "../../../Shared/Model/fileUploads";
 import { WOW } from "wowjs/dist/wow.min"; //Enable WOW animations
+import { map, delay } from "rxjs/operators";
 
 @Component({
   selector: "app-products",
@@ -15,6 +16,8 @@ export class ProductsComponent implements OnInit {
   public arrivedProducts1: Iproducts[];
   public arrivedProducts2: Iproducts[];
   public arrivedProducts3: Iproducts[];
+  public searchText;
+  public allProducts: Array<{}>;
 
   // public arrivedFiles: IfileUploads;
 
@@ -47,5 +50,15 @@ export class ProductsComponent implements OnInit {
   }
   setChoice(choice) {
     this.choice = choice;
+  }
+
+  getallProds() {
+    this.allProducts = [
+      this.arrivedProducts,
+      this.arrivedProducts1,
+      this.arrivedProducts2,
+      this.arrivedProducts3
+    ];
+    console.log(this.allProducts);
   }
 }

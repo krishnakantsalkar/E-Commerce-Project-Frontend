@@ -15,14 +15,16 @@ html {
 
 .btn-danger,
 .btn-success,
-.btn-warning {
+.btn-warning,
+.btn-info {
   margin-left: 20px;
 }
 
 div.mobiles span,
 div.computers span,
 div.ac span,
-div.fridge span {
+div.fridge span,
+div.all span {
   font-weight: bold;
 }
 p {
@@ -31,7 +33,8 @@ p {
 .mobiles,
 .computers,
 .ac,
-.fridge {
+.fridge,
+.alll {
   border: 1px solid black;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -40,7 +43,8 @@ p {
 .mobiles:hover,
 .computers:hover,
 .ac:hover,
-.fridge:hover {
+.fridge:hover,
+.alll:hover {
   background-color: rgb(156, 153, 153);
 }
 
@@ -48,10 +52,12 @@ div.mobiles a.add-to-cart-link,
 div.computers a.add-to-cart-link,
 div.ac a.add-to-cart-link,
 div.fridge a.add-to-cart-link,
+div.alll a.add-to-cart-link,
 div.mobiles a.view-details-link,
 div.computers a.view-details-link,
 div.ac a.view-details-link,
-div.fridge a.view-details-link {
+div.fridge a.view-details-link,
+div.alll a.view-details-link {
   background: none repeat scroll 0 0 #5a88ca;
   border-radius: 5px;
   color: #fff;
@@ -68,14 +74,16 @@ div.fridge a.view-details-link {
 div.mobiles a.add-to-cart-link,
 div.computers a.add-to-cart-link,
 div.ac a.add-to-cart-link,
-div.fridge a.add-to-cart-link {
+div.fridge a.add-to-cart-link,
+div.alll a.add-to-cart-link {
   margin-top: -30px;
   margin-bottom: 5px;
 }
 div.mobiles a.view-details-link,
 div.computers a.view-details-link,
 div.ac a.view-details-link,
-div.fridge a.view-details-link {
+div.fridge a.view-details-link,
+div.alll a.view-details-link {
   margin-bottom: 5px;
 }
 
@@ -83,13 +91,16 @@ div.mobiles a.add-to-cart-link:hover,
 div.computers a.add-to-cart-link:hover,
 div.ac a.add-to-cart-link:hover,
 div.fridge a.add-to-cart-link:hover,
+div.alll a.add-to-cart-link:hover,
 div.mobiles a.view-details-link:hover,
 div.computers a.view-details-link:hover,
 div.ac a.view-details-link:hover,
-div.fridge a.view-details-link:hover {
+div.fridge a.view-details-link:hover,
+div.alll a.view-details-link:hover {
   background-color: black;
 }
 
-div.mobiles span:hover {
+div.mobiles span:hover,
+div.alll span:hover {
   color: white;
 }

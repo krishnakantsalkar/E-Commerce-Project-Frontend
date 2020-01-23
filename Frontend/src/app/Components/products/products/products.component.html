@@ -23,6 +23,9 @@
           <button class="btn btn-warning " (click)="setChoice(4)">
             Refrigerators
           </button>
+          <button class="btn btn-info " (click)="setChoice(5)" (click)="getallProds()">
+            All Products
+          </button>
         </header>
         <div class="switch-case-Main" [ngSwitch]="choice">
           <!-- Mobile Phones Section -->
@@ -894,6 +897,51 @@
               </div>
             </div>
             <!-- Fridge section end -->
+            
+            <div class="alllll" *ngSwitchCase='5' >
+              <div class="all-section" *ngIf="allProducts">
+              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+             <br>
+              <div class="row">
+                <div class="col-12 " *ngFor="let all of allProducts">
+                  <div class="row">
+                  <div class="col-4 alll" *ngFor="let a of all | filter:searchText " align="center">
+                    <span > {{ a.name }}</span>
+                    <br />
+                    <br />
+                    <div class="image-area">
+                      <img src="{{ a.image }}" />
+                    </div>
+                    <hr />
+                    <p>{{ a.description }}</p>
+                    <div class="price">MRP: ₹{{ a.price + "/-" }}</div>
+                    <div
+                      class="offer-price"
+                      *ngIf="a.isTodayOffer === true"
+                    >
+                      Offer Price: <s>{{ a.price }}</s> ₹
+                      {{ a.offerPrice + "/-" }}
+                    </div>
+                    <br />
+                    <br />
+                    <div class="ac-shadow">
+                      <a href="#" class="add-to-cart-link"
+                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
+                      >
+
+                      <a href="#" class="view-details-link"
+                        ><i class="fa fa-link"></i> See details</a
+                      >
+
+                    </div>
+                  </div>
+                  <br>
+                </div>
+                  <hr />
+                </div>
+              </div>
+            </div>
+          </div>
           </article>
         </div>
       </div>
