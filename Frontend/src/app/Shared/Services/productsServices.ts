@@ -11,22 +11,22 @@ export class productsData {
   public productsApiAll: string =
     "http://localhost:4500/api/products/getProducts"; // Mobile Phones
   public productsApibyID: string =
-    "https://localhost:4500/api/products/getProductsByID/:id";
+    "http://localhost:4500/api/products/getProductsByID/";
 
   public products1ApiAll: string =
     "http://localhost:4500/api/products/getProducts1"; //Computers
   public products1ApibyID: string =
-    "https://localhost:4500/api/products/getProductsByID1/:id";
+    "https://localhost:4500/api/products/getProductsByID1/";
 
   public products2ApiAll: string =
     "http://localhost:4500/api/products/getProducts2"; // Air Conditioner
   public products2ApibyID: string =
-    "https://localhost:4500/api/products/getProductsByID2/:id";
+    "https://localhost:4500/api/products/getProductsByID2/";
 
   public products3ApiAll: string =
     "http://localhost:4500/api/products/getProducts3"; // Refrigerator
   public products3ApibyID: string =
-    "https://localhost:4500/api/products/getProductsByID3/:id";
+    "https://localhost:4500/api/products/getProductsByID3/";
 
   // public product1: any =
   //   "http://localhost:4500/api/file/getFilesById/5e1d99e358778ea7042d6452";
@@ -52,4 +52,7 @@ export class productsData {
   // getImage1(): Observable<IfileUploads> {
   //   return this.http.get<IfileUploads>(this.product1);
   // }
+  cartProduct(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.productsApibyID + id);
+  }
 }
