@@ -4,6 +4,7 @@ export interface Iproducts {
   name: string;
   image: string;
   description: string;
+  quantity: number;
   price: number;
   offerPrice: number;
   isAvailable: boolean;
