@@ -66,6 +66,13 @@ const routes: Route[] = [
     path: "Cart",
     loadChildren: "./Components/cart/cart.module#CartModule"
     // canActivate: [authGuard]
+  },
+
+  // Wishlist Page Routes
+
+  {
+    path: "Wishlist",
+    loadChildren: "./Components/wishlist/wishlist.module#WishlistModule"
   }
 ];
 
