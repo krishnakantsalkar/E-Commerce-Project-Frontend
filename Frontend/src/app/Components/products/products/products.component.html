@@ -23,9 +23,21 @@
           <button class="btn btn-warning " (click)="setChoice(4)">
             Refrigerators
           </button>
-          <button class="btn btn-info " (click)="setChoice(5)" (click)="getallProds()">
+          <button
+            class="btn btn-info "
+            (click)="setChoice(5)"
+            (click)="getallProds()"
+          >
             All Products
           </button>
+          <input
+            class="form-control searchbox"
+            type="text"
+            name="search"
+            [(ngModel)]="searchText"
+            autocomplete="off"
+            placeholder="Search"
+          />
         </header>
         <div class="switch-case-Main" [ngSwitch]="choice">
           <!-- Mobile Phones Section -->
@@ -33,12 +45,11 @@
             <div class="mobile-section" *ngSwitchCase="1">
               <div class="row">
                 <!-- product 1 -->
-                <div
-                  class="col-3"
-                  *ngFor="let prods of arrivedProducts | slice: 0:1"
-                >
+                <div class="col-3" *ngFor="let prods of arrivedProducts | filter: searchText">
                   <div class="mobiles" align="center">
-                    <span routerLink="/Products/product1"> {{ prods.name }}</span>
+                    <span routerLink="/Products/product1">
+                      {{ prods.name }}</span
+                    >
                     <br />
                     <br />
                     <div class="image-area">
@@ -58,207 +69,12 @@
                     <br />
                     <br />
                     <div class="mobile-shadow">
-                      <a
-                        class="add-to-cart-link"
-                        
+                      <a class="add-to-cart-link"
                         ><i class="fa fa-shopping-cart"></i> Add to cart</a
                       >
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 2 -->
-                <div
-                  class="col-3"
-                  *ngFor="let prods of arrivedProducts | slice: 1:2"
-                >
-                  <div class="mobiles" align="center">
-                    <span routerLink="/Products/product2"> {{ prods.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods.description }}</p>
-                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods.price }}</s> ₹{{
-                        prods.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mobile-shadow">
                       <a
-                        class="add-to-cart-link"
-                        
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 3 -->
-                <div
-                  class="col-3"
-                  *ngFor="let prods of arrivedProducts | slice: 2:3"
-                >
-                  <div class="mobiles" align="center">
-                    <span routerLink="/Products/product3"> {{ prods.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods.description }}</p>
-                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods.price }}</s> ₹{{
-                        prods.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mobile-shadow">
-                      <a
-                        class="add-to-cart-link"
-                        
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 4 -->
-                <div
-                  class="col-3"
-                  *ngFor="let prods of arrivedProducts | slice: 3:4"
-                >
-                  <div class="mobiles" align="center">
-                    <span> {{ prods.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods.description }}</p>
-                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods.price }}</s> ₹{{
-                        prods.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mobile-shadow">
-                      <a
-                        class="add-to-cart-link"
-                        
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-                       <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 5 -->
-                <div
-                  class="col-3"
-                  *ngFor="let prods of arrivedProducts | slice: 4:5"
-                >
-                  <div class="mobiles" align="center">
-                    <span> {{ prods.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods.description }}</p>
-                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods.price }}</s> ₹{{
-                        prods.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mobile-shadow">
-                      <a
-                        class="add-to-cart-link"
-                        
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 6 -->
-                <div
-                  class="col-3"
-                  *ngFor="let prods of arrivedProducts | slice: 5:6"
-                >
-                  <div class="mobiles" align="center">
-                    <span> {{ prods.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods.description }}</p>
-                    <div class="price">MRP: ₹{{ prods.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods.price }}</s> ₹{{
-                        prods.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="mobile-shadow">
-                      <a
-                        class="add-to-cart-link"
-                        
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-                      <a href="#" class="view-details-link"
+                        routerLink="/Products/{{ prods._id }}"
+                        class="view-details-link"
                         ><i class="fa fa-link"></i> See details</a
                       >
                     </div>
@@ -273,7 +89,7 @@
             <div class="pc-section" *ngSwitchCase="2">
               <div class="row">
                 <!-- product 1 -->
-                <div class="col-3" *ngFor="let prods1 of arrivedProducts1| slice :0:1">
+                <div class="col-3" *ngFor="let prods1 of arrivedProducts1 | filter: searchText">
                   <div class="computers" align="center">
                     <span>{{ prods1.name }}</span>
                     <br />
@@ -298,180 +114,6 @@
                       <a href="#" class="add-to-cart-link"
                         ><i class="fa fa-shopping-cart"></i> Add to cart</a
                       >
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 2 -->
-                <div class="col-3" *ngFor="let prods1 of arrivedProducts1| slice :1:2">
-                  <div class="computers" align="center">
-                    <span>{{ prods1.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods1.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods1.description }}</p>
-                    <div class="price">MRP: ₹{{ prods1.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods1.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods1.price }}</s> ₹{{
-                        prods1.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="computer-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 3 -->
-                <div class="col-3" *ngFor="let prods1 of arrivedProducts1| slice :2:3">
-                  <div class="computers" align="center">
-                    <span>{{ prods1.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods1.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods1.description }}</p>
-                    <div class="price">MRP: ₹{{ prods1.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods1.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods1.price }}</s> ₹{{
-                        prods1.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="computer-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 4 -->
-                <div class="col-3" *ngFor="let prods1 of arrivedProducts1| slice :3:4">
-                  <div class="computers" align="center">
-                    <span>{{ prods1.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods1.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods1.description }}</p>
-                    <div class="price">MRP: ₹{{ prods1.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods1.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods1.price }}</s> ₹{{
-                        prods1.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="computer-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 5 -->
-                <div class="col-3" *ngFor="let prods1 of arrivedProducts1| slice :4:5">
-                  <div class="computers" align="center">
-                    <span>{{ prods1.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods1.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods1.description }}</p>
-                    <div class="price">MRP: ₹{{ prods1.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods1.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods1.price }}</s> ₹{{
-                        prods1.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="computer-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-
-                  <hr />
-                </div>
-                <!-- product 6 -->
-                <div class="col-3" *ngFor="let prods1 of arrivedProducts1| slice :5:6">
-                  <div class="computers" align="center">
-                    <span>{{ prods1.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods1.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods1.description }}</p>
-                    <div class="price">MRP: ₹{{ prods1.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods1.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods1.price }}</s> ₹{{
-                        prods1.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="computer-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
                       <a href="#" class="view-details-link"
                         ><i class="fa fa-link"></i> See details</a
                       >
@@ -487,172 +129,7 @@
             <div class="ac-section" *ngSwitchCase="3">
               <div class="row">
                 <!-- product 1 -->
-                <div class="col-3" *ngFor="let prods2 of arrivedProducts2 | slice : 0:1">
-                  <div class="ac" align="center">
-                    <span> {{ prods2.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods2.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods2.description }}</p>
-                    <div class="price">MRP: ₹{{ prods2.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods2.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods2.price }}</s> ₹
-                      {{ prods2.offerPrice + "/-" }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="ac-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 2 -->
-                <div class="col-3" *ngFor="let prods2 of arrivedProducts2 | slice : 1:2">
-                  <div class="ac" align="center">
-                    <span> {{ prods2.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods2.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods2.description }}</p>
-                    <div class="price">MRP: ₹{{ prods2.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods2.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods2.price }}</s> ₹
-                      {{ prods2.offerPrice + "/-" }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="ac-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 3 -->
-                <div class="col-3" *ngFor="let prods2 of arrivedProducts2 | slice : 2:3">
-                  <div class="ac" align="center">
-                    <span> {{ prods2.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods2.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods2.description }}</p>
-                    <div class="price">MRP: ₹{{ prods2.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods2.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods2.price }}</s> ₹
-                      {{ prods2.offerPrice + "/-" }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="ac-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 4 -->
-                <div class="col-3" *ngFor="let prods2 of arrivedProducts2 | slice : 3:4">
-                  <div class="ac" align="center">
-                    <span> {{ prods2.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods2.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods2.description }}</p>
-                    <div class="price">MRP: ₹{{ prods2.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods2.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods2.price }}</s> ₹
-                      {{ prods2.offerPrice + "/-" }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="ac-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 5 -->
-                <div class="col-3" *ngFor="let prods2 of arrivedProducts2 | slice : 4:5">
-                  <div class="ac" align="center">
-                    <span> {{ prods2.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods2.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods2.description }}</p>
-                    <div class="price">MRP: ₹{{ prods2.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods2.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods2.price }}</s> ₹
-                      {{ prods2.offerPrice + "/-" }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="ac-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 6 -->
-                <div class="col-3" *ngFor="let prods2 of arrivedProducts2 | slice : 5:6">
+                <div class="col-3" *ngFor="let prods2 of arrivedProducts2 | filter: searchText">
                   <div class="ac" align="center">
                     <span> {{ prods2.name }}</span>
                     <br />
@@ -691,177 +168,7 @@
             <div class="fridge-section" *ngSwitchCase="4">
               <div class="row">
                 <!-- product 1 -->
-                <div class="col-3" *ngFor="let prods3 of arrivedProducts3 | slice: 0:1">
-                  <div class="fridge" align="center">
-                    <span>{{ prods3.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods3.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods3.description }}</p>
-                    <div class="price">MRP: ₹{{ prods3.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods3.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods3.price }}</s> ₹{{
-                        prods3.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="fridge-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 2 -->
-                <div class="col-3" *ngFor="let prods3 of arrivedProducts3 | slice: 1:2">
-                  <div class="fridge" align="center">
-                    <span>{{ prods3.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods3.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods3.description }}</p>
-                    <div class="price">MRP: ₹{{ prods3.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods3.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods3.price }}</s> ₹{{
-                        prods3.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="fridge-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 3 -->
-                <div class="col-3" *ngFor="let prods3 of arrivedProducts3 | slice: 2:3">
-                  <div class="fridge" align="center">
-                    <span>{{ prods3.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods3.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods3.description }}</p>
-                    <div class="price">MRP: ₹{{ prods3.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods3.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods3.price }}</s> ₹{{
-                        prods3.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="fridge-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 4 -->
-                <div class="col-3" *ngFor="let prods3 of arrivedProducts3 | slice: 3:4">
-                  <div class="fridge" align="center">
-                    <span>{{ prods3.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods3.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods3.description }}</p>
-                    <div class="price">MRP: ₹{{ prods3.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods3.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods3.price }}</s> ₹{{
-                        prods3.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="fridge-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 5 -->
-                <div class="col-3" *ngFor="let prods3 of arrivedProducts3 | slice: 4:5">
-                  <div class="fridge" align="center">
-                    <span>{{ prods3.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ prods3.image }}" />
-                    </div>
-                    <hr />
-                    <p>{{ prods3.description }}</p>
-                    <div class="price">MRP: ₹{{ prods3.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="prods3.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ prods3.price }}</s> ₹{{
-                        prods3.offerPrice + "/-"
-                      }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="fridge-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-                    </div>
-                  </div>
-                  <hr />
-                </div>
-                <!-- product 6 -->
-                <div class="col-3" *ngFor="let prods3 of arrivedProducts3 | slice: 5:6">
+                <div class="col-3" *ngFor="let prods3 of arrivedProducts3 | filter: searchText">
                   <div class="fridge" align="center">
                     <span>{{ prods3.name }}</span>
                     <br />
@@ -897,51 +204,53 @@
               </div>
             </div>
             <!-- Fridge section end -->
-            
-            <div class="alllll" *ngSwitchCase='5' >
+
+            <div class="alllll" *ngSwitchCase="5">
               <div class="all-section" *ngIf="allProducts">
-              <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
-             <br>
-              <div class="row">
-                <div class="col-12 " *ngFor="let all of allProducts">
-                  <div class="row">
-                  <div class="col-4 alll" *ngFor="let a of all | filter:searchText " align="center">
-                    <span > {{ a.name }}</span>
-                    <br />
-                    <br />
-                    <div class="image-area">
-                      <img src="{{ a.image }}" />
+                <br />
+                <div class="row">
+                  <div class="col-12 " *ngFor="let all of allProducts">
+                    <div class="row">
+                      <div
+                        class="col-4 alll"
+                        *ngFor="let a of all | filter: searchText"
+                        align="center"
+                      >
+                        <span> {{ a.name }}</span>
+                        <br />
+                        <br />
+                        <div class="image-area">
+                          <img src="{{ a.image }}" />
+                        </div>
+                        <hr />
+                        <p>{{ a.description }}</p>
+                        <div class="price">MRP: ₹{{ a.price + "/-" }}</div>
+                        <div
+                          class="offer-price"
+                          *ngIf="a.isTodayOffer === true"
+                        >
+                          Offer Price: <s>{{ a.price }}</s> ₹
+                          {{ a.offerPrice + "/-" }}
+                        </div>
+                        <br />
+                        <br />
+                        <div class="ac-shadow">
+                          <a href="#" class="add-to-cart-link"
+                            ><i class="fa fa-shopping-cart"></i> Add to cart</a
+                          >
+
+                          <a href="#" class="view-details-link"
+                            ><i class="fa fa-link"></i> See details</a
+                          >
+                        </div>
+                      </div>
+                      <br />
                     </div>
                     <hr />
-                    <p>{{ a.description }}</p>
-                    <div class="price">MRP: ₹{{ a.price + "/-" }}</div>
-                    <div
-                      class="offer-price"
-                      *ngIf="a.isTodayOffer === true"
-                    >
-                      Offer Price: <s>{{ a.price }}</s> ₹
-                      {{ a.offerPrice + "/-" }}
-                    </div>
-                    <br />
-                    <br />
-                    <div class="ac-shadow">
-                      <a href="#" class="add-to-cart-link"
-                        ><i class="fa fa-shopping-cart"></i> Add to cart</a
-                      >
-
-                      <a href="#" class="view-details-link"
-                        ><i class="fa fa-link"></i> See details</a
-                      >
-
-                    </div>
                   </div>
-                  <br>
-                </div>
-                  <hr />
                 </div>
               </div>
             </div>
-          </div>
           </article>
         </div>
       </div>

@@ -19,6 +19,9 @@ html {
 .btn-info {
   margin-left: 20px;
 }
+.searchbox {
+  margin-top: 10px;
+}
 
 div.mobiles span,
 div.computers span,
