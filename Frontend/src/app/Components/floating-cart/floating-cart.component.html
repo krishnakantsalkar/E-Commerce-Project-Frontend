@@ -10,8 +10,12 @@
     <div class="content">
       <div class="floating-menu">
         <div class="dropup">
-          <button class="dropbtn">
-            <i class="fa fa-cart-plus" aria-hidden="true"></i> Cart {{ count }}
+          <button class="dropbtn" routerLink="/Cart">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i> Cart
+            <span *ngIf="count">{{ count }}</span
+            ><span *ngIf="count1">+{{ count1 }}</span>
+            <span *ngIf="count2">+{{ count2 }}</span>
+            <span *ngIf="count3">+{{ count3 }}</span>
           </button>
           <div class="dropup-content">
             <h4 align="center">
@@ -21,10 +25,11 @@
             <h3
               align="center"
               style="height:50px;color: black;"
-              *ngIf="!cartItems"
+              *ngIf="!cartItems && !cartItems1 && !cartItems2! && !cartItems3"
             >
               Your Cart is Empty! or Refresh to see cart Items
             </h3>
+            <br />
             <div class="container" *ngIf="cartItems">
               <div
                 class="cartitems"
@@ -36,6 +41,51 @@
               <button
                 class="clearCart btn btn-primary"
                 (click)="removefromCart()"
+              >
+                Clear Cart
+              </button>
+            </div>
+            <div class="container" *ngIf="cartItems1">
+              <div
+                class="cartitems1"
+                *ngFor="let cart1 of cartItems1"
+                style="height:50px"
+              >
+                {{ cart1.name }}
+              </div>
+              <button
+                class="clearCart btn btn-primary"
+                (click)="removefromCart1()"
+              >
+                Clear Cart
+              </button>
+            </div>
+            <div class="container" *ngIf="cartItems2">
+              <div
+                class="cartitems"
+                *ngFor="let cart2 of cartItems2"
+                style="height:50px"
+              >
+                {{ cart2.name }}
+              </div>
+              <button
+                class="clearCart btn btn-primary"
+                (click)="removefromCart2()"
+              >
+                Clear Cart
+              </button>
+            </div>
+            <div class="container" *ngIf="cartItems3">
+              <div
+                class="cartitems"
+                *ngFor="let cart3 of cartItems3"
+                style="height:50px"
+              >
+                {{ cart3.name }}
+              </div>
+              <button
+                class="clearCart btn btn-primary"
+                (click)="removefromCart3()"
               >
                 Clear Cart
               </button>
