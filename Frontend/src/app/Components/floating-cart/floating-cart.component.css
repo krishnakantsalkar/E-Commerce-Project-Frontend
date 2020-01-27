@@ -12,7 +12,7 @@ div.content {
   /* margin-top: 600px; */
   /* float: left; */
   /* margin-left: 1390px; */
-  right: 0;
+  right: 25px;
   bottom: 0;
 }
 .floating-menu a,
@@ -52,6 +52,7 @@ div.content {
   padding-left: 0px;
   padding-right: 0px;
   right: -30px;
+  border: 2px solid black;
 }
 
 /* Links inside the dropup */
@@ -75,4 +76,13 @@ div.content {
 /* Change the background color of the dropup button when the dropup content is shown */
 .dropup:hover .dropbtn {
   background-color: #2980b9;
+}
+
+div.dropup-content h4 {
+  margin-top: 10px;
+}
+
+.clearCart {
+  margin-left: 15px;
+  margin-bottom: 10px;
 }

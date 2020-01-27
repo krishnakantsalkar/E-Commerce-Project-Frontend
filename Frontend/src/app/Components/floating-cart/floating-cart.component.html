@@ -11,13 +11,35 @@
       <div class="floating-menu">
         <div class="dropup">
           <button class="dropbtn">
-            <i class="fa fa-cart-plus" aria-hidden="true"></i> Cart
+            <i class="fa fa-cart-plus" aria-hidden="true"></i> Cart {{ count }}
           </button>
           <div class="dropup-content">
-            <h6 align="center">Cart</h6>
-            <h3 align="center" style="height: 100px;color: black;">
-              Your Cart is Empty!
+            <h4 align="center">
+              Cart
+              <hr />
+            </h4>
+            <h3
+              align="center"
+              style="height:50px;color: black;"
+              *ngIf="!cartItems"
+            >
+              Your Cart is Empty! or Refresh to see cart Items
             </h3>
+            <div class="container" *ngIf="cartItems">
+              <div
+                class="cartitems"
+                *ngFor="let cart of cartItems"
+                style="height:50px"
+              >
+                {{ cart.name }}
+              </div>
+              <button
+                class="clearCart btn btn-primary"
+                (click)="removefromCart()"
+              >
+                Clear Cart
+              </button>
+            </div>
           </div>
         </div>
       </div>
