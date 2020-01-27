@@ -4,6 +4,8 @@ import { HomeComponent } from "./Components/home/home.component";
 import { authGuard } from "./Shared/Services/authGuard";
 
 const routes: Route[] = [
+  // Main Routing
+
   {
     path: "",
     component: HomeComponent
@@ -56,6 +58,14 @@ const routes: Route[] = [
     path: "Products/product3",
     loadChildren:
       "./Components/single-product3/single-product3.module#SingleProduct3Module"
+  },
+
+  // Cart Page Routes
+
+  {
+    path: "Cart",
+    loadChildren: "./Components/cart/cart.module#CartModule"
+    // canActivate: [authGuard]
   }
 ];
 
