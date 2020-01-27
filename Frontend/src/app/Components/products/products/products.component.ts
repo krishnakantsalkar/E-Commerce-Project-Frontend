@@ -19,6 +19,9 @@ export class ProductsComponent implements OnInit {
   public allProducts: Array<{}>;
   // public add: boolean = false;
   public cartStuff: any[] = [];
+  public cartStuff1: any[] = [];
+  public cartStuff2: any[] = [];
+  public cartStuff3: any[] = [];
 
   // public arrivedFiles: IfileUploads;
 
@@ -69,6 +72,45 @@ export class ProductsComponent implements OnInit {
       console.log(this.cartStuff);
       localStorage.setItem("product", JSON.stringify(this.cartStuff));
       if (this.cartStuff.length === 3) {
+        alert("You can add only 3 products in cart at a time!");
+        location.reload();
+      }
+    });
+  }
+
+  addtoCart1(id) {
+    this.products.cartProduct1(id).subscribe(item => {
+      console.log(item);
+      this.cartStuff1.push(item);
+      console.log(this.cartStuff1);
+      localStorage.setItem("product1", JSON.stringify(this.cartStuff1));
+      if (this.cartStuff1.length === 3) {
+        alert("You can add only 3 products in cart at a time!");
+        location.reload();
+      }
+    });
+  }
+
+  addtoCart2(id) {
+    this.products.cartProduct2(id).subscribe(item => {
+      console.log(item);
+      this.cartStuff2.push(item);
+      console.log(this.cartStuff2);
+      localStorage.setItem("product2", JSON.stringify(this.cartStuff2));
+      if (this.cartStuff2.length === 3) {
+        alert("You can add only 3 products in cart at a time!");
+        location.reload();
+      }
+    });
+  }
+
+  addtoCart3(id) {
+    this.products.cartProduct3(id).subscribe(item => {
+      console.log(item);
+      this.cartStuff3.push(item);
+      console.log(this.cartStuff3);
+      localStorage.setItem("product3", JSON.stringify(this.cartStuff3));
+      if (this.cartStuff3.length === 3) {
         alert("You can add only 3 products in cart at a time!");
         location.reload();
       }

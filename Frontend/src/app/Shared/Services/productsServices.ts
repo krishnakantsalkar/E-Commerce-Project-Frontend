@@ -16,17 +16,17 @@ export class productsData {
   public products1ApiAll: string =
     "http://localhost:4500/api/products/getProducts1"; //Computers
   public products1ApibyID: string =
-    "https://localhost:4500/api/products/getProductsByID1/";
+    "http://localhost:4500/api/products/getProductsByID1/";
 
   public products2ApiAll: string =
     "http://localhost:4500/api/products/getProducts2"; // Air Conditioner
   public products2ApibyID: string =
-    "https://localhost:4500/api/products/getProductsByID2/";
+    "http://localhost:4500/api/products/getProductsByID2/";
 
   public products3ApiAll: string =
     "http://localhost:4500/api/products/getProducts3"; // Refrigerator
   public products3ApibyID: string =
-    "https://localhost:4500/api/products/getProductsByID3/";
+    "http://localhost:4500/api/products/getProductsByID3/";
 
   // public product1: any =
   //   "http://localhost:4500/api/file/getFilesById/5e1d99e358778ea7042d6452";
@@ -54,5 +54,17 @@ export class productsData {
   // }
   cartProduct(id): Observable<Iproducts> {
     return this.http.get<Iproducts>(this.productsApibyID + id);
+  }
+
+  cartProduct1(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.products1ApibyID + id);
+  }
+
+  cartProduct2(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.products2ApibyID + id);
+  }
+
+  cartProduct3(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.products3ApibyID + id);
   }
 }
