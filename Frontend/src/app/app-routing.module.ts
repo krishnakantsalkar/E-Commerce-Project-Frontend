@@ -43,7 +43,7 @@ const routes: Route[] = [
   // Single Products Page Routing!
 
   {
-    path: "Products/product1",
+    path: "Products/:id",
     loadChildren:
       "./Components/single-product1/single-product1.module#SingleProduct1Module"
   },

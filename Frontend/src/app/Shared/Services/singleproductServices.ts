@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 export class singleproductServices {
   public header: HttpHeaders;
   public getProductById1: string =
-    "http://localhost:4500/api/products/getProductsbyID/5ddcc5b3cd631b0fe4d4d0d7";
+    "http://localhost:4500/api/products/getProductsbyID/";
   public getProductById2: string =
     "http://localhost:4500/api/products/getProductsbyID/5de002acdb2af214386b5d15";
   public getProductById3: string =
@@ -17,8 +17,8 @@ export class singleproductServices {
     this.header = new HttpHeaders({ "Content-Type": "application/json" });
   }
 
-  getProduct1(): Observable<Iproducts> {
-    return this.http.get<Iproducts>(this.getProductById1);
+  getProduct1(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.getProductById1 + id);
   }
   getProduct2(): Observable<Iproducts> {
     return this.http.get<Iproducts>(this.getProductById2);

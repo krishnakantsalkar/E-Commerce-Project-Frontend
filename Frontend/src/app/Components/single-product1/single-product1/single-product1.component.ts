@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { singleproductServices } from "../../../Shared/Services/singleproductServices";
 import { Iproducts } from "../../../Shared/Model/products";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-single-product1",
@@ -9,12 +10,18 @@ import { Iproducts } from "../../../Shared/Model/products";
 })
 export class SingleProduct1Component implements OnInit {
   public arrivedProduct1;
-  constructor(private singleproduct: singleproductServices) {}
+  constructor(
+    private singleproduct: singleproductServices,
+    private AR: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.singleproduct.getProduct1().subscribe(item => {
-      console.log(item);
-      this.arrivedProduct1 = item;
+    this.AR.params.subscribe(item => {
+      let id = item["id"];
+      this.singleproduct.getProduct1(id).subscribe(item => {
+        console.log(item);
+        this.arrivedProduct1 = item;
+      });
     });
   }
 }
