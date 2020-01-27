@@ -107,3 +107,7 @@ div.mobiles span:hover,
 div.alll span:hover {
   color: white;
 }
+
+div.mobiles a.add-to-cart-link:active {
+  background-color: red;
+}

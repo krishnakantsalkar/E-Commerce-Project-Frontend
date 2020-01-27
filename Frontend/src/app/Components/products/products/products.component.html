@@ -69,9 +69,13 @@
                     <br />
                     <br />
                     <div class="mobile-shadow">
-                      <a class="add-to-cart-link"
+                      <a class="add-to-cart-link" (click)="addtoCart(prods._id)"
                         ><i class="fa fa-shopping-cart"></i> Add to cart</a
                       >
+                      <!-- (click)="added()" *ngIf="!add" [add in above div] -->
+                      <!-- <a class="add-to-cart-link" (click)="added()" *ngIf='add'
+                      ><i class="fa fa-shopping-cart"></i> Added to cart</a
+                    > -->
                       <a
                         routerLink="/Products/{{ prods._id }}"
                         class="view-details-link"

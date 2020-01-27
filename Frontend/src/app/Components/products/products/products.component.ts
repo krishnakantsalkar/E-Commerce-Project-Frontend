@@ -4,7 +4,6 @@ import { productsData } from "../../../Shared/Services/productsServices";
 import { Iproducts } from "../../../Shared/Model/products";
 // import { IfileUploads } from "../../../Shared/Model/fileUploads";
 import { WOW } from "wowjs/dist/wow.min"; //Enable WOW animations
-import { map, delay } from "rxjs/operators";
 
 @Component({
   selector: "app-products",
@@ -18,6 +17,8 @@ export class ProductsComponent implements OnInit {
   public arrivedProducts3: Iproducts[];
   public searchText;
   public allProducts: Array<{}>;
+  // public add: boolean = false;
+  public cartStuff: any[] = [];
 
   // public arrivedFiles: IfileUploads;
 
@@ -61,4 +62,19 @@ export class ProductsComponent implements OnInit {
     ];
     console.log(this.allProducts);
   }
+  addtoCart(id) {
+    this.products.cartProduct(id).subscribe(item => {
+      console.log(item);
+      this.cartStuff.push(item);
+      console.log(this.cartStuff);
+      localStorage.setItem("product", JSON.stringify(this.cartStuff));
+      if (this.cartStuff.length === 3) {
+        alert("You can add only 3 products in cart at a time!");
+        location.reload();
+      }
+    });
+  }
+  // added() {
+  //   this.add = !this.add;
+  // }
 }
