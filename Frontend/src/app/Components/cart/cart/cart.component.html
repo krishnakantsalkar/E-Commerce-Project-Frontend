@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container cart-page">
+      <div class="card">
+        <header class="card-header">
+          <h2>User Cart</h2>
+          <button
+            class="empty-cart btn btn-danger"
+            (click)="removeItem()"
+            *ngIf="cartPageItems"
+          >
+            Empty Cart
+          </button>
+        </header>
+        <article class="card-body">
+          <div class="cart-content">
+            <div class="row">
+              <div class="col-4" *ngFor="let items of cartPageItems">
+                {{ items.name }}
+                <br />
+                <img src="{{ items.image }}" />
+                <div class="price">MRP: ₹{{ items.price + "/-" }}</div>
+                <h5>Quantity: {{ items.quantity }}</h5>
+                <div class="offer-price" *ngIf="items.isTodayOffer === true">
+                  Offer Price: <s>{{ items.price }}</s> ₹{{
+                    items.offerPrice + "/-"
+                  }}
+                  <br />
+                  Final Price: {{ items.offerPrice + "/-" }}
+                </div>
+                <hr />
+                <button class="buy-now btn btn-primary">Buy Now</button>
+
+                <button class="wishlist btn btn-warning">
+                  Add to Wishlist
+                </button>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-4" *ngFor="let items1 of cartPageItems1">
+                {{ items1.name }}
+                <br />
+                <img src="{{ items1.image }}" />
+                <div class="price">MRP: ₹{{ items1.price + "/-" }}</div>
+                <h5>Quantity: {{ items1.quantity }}</h5>
+                <div class="offer-price" *ngIf="items1.isTodayOffer === true">
+                  Offer Price: <s>{{ items1.price }}</s> ₹{{
+                    items1.offerPrice + "/-"
+                  }}
+                  <br />
+                  Final Price: {{ items1.offerPrice + "/-" }}
+                </div>
+                <hr />
+                <button class="buy-now btn btn-primary">Buy Now</button>
+
+                <button class="wishlist btn btn-warning">
+                  Add to Wishlist
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4" *ngFor="let items2 of cartPageItems2">
+                {{ items2.name }}
+                <br />
+                <img src="{{ items2.image }}" />
+                <div class="price">MRP: ₹{{ items2.price + "/-" }}</div>
+                <h5>Quantity: {{ items2.quantity }}</h5>
+                <div class="offer-price" *ngIf="items2.isTodayOffer === true">
+                  Offer Price: <s>{{ items2.price }}</s> ₹{{
+                    items2.offerPrice + "/-"
+                  }}
+                  <br />
+                  Final Price: {{ items2.offerPrice + "/-" }}
+                </div>
+                <hr />
+                <button class="buy-now btn btn-primary">Buy Now</button>
+
+                <button class="wishlist btn btn-warning">
+                  Add to Wishlist
+                </button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-4" *ngFor="let items3 of cartPageItems3">
+                {{ items3.name }}
+                <br />
+                <img src="{{ items3.image }}" />
+                <div class="price">MRP: ₹{{ items3.price + "/-" }}</div>
+                <h5>Quantity: {{ items3.quantity }}</h5>
+                <div class="offer-price" *ngIf="items3.isTodayOffer === true">
+                  Offer Price: <s>{{ items3.price }}</s> ₹{{
+                    items3.offerPrice + "/-"
+                  }}
+                  <br />
+                  Final Price: {{ items3.offerPrice + "/-" }}
+                </div>
+                <hr />
+                <button class="buy-now btn btn-primary">Buy Now</button>
+
+                <button class="wishlist btn btn-warning">
+                  Add to Wishlist
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="cart-empty" *ngIf="!cartPageItems">
+            <h2>Cart Empty</h2>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
