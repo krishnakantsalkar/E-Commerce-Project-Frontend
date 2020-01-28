@@ -50,14 +50,19 @@ const routes: Route[] = [
       "./Components/single-product1/single-product1.module#SingleProduct1Module"
   },
   {
-    path: "Products/product2",
+    path: "Products/product1/:id",
     loadChildren:
       "./Components/single-product2/single-product2.module#SingleProduct2Module"
   },
   {
-    path: "Products/product3",
+    path: "Products/product2/:id",
     loadChildren:
       "./Components/single-product3/single-product3.module#SingleProduct3Module"
+  },
+  {
+    path: "Products/product3/:id",
+    loadChildren:
+      "./Components/single-product4/single-product4.module#SingleProduct4Module"
   },
 
   // Cart Page Routes
