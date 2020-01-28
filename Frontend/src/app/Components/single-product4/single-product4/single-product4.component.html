@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container singleproduct-4">
+      <div class="card">
+        <header class="card-header">
+          <span *ngIf="arrivedProduct4">
+            Product ID: {{ arrivedProduct4._id }}</span
+          >
+        </header>
+        <article class="card-body">
+          <div class="content" *ngIf="arrivedProduct4">
+            <b> {{ arrivedProduct4.name }}</b>
+            <p *ngFor="let cat of arrivedProduct4.category">
+              Category: {{ cat.categoryName }}
+            </p>
+
+            <div class="row">
+              <div class="col-4">
+                <img src="{{ arrivedProduct4.image }}" />
+                {{ arrivedProduct4.categoryName }}
+
+                <br /><br />
+                <p>{{ arrivedProduct4.description }}</p>
+                <div class="price">
+                  MRP: ₹{{ arrivedProduct4.price + "/-" }}
+                </div>
+                <div
+                  class="offer-price"
+                  *ngIf="arrivedProduct4.isTodayOffer === true"
+                >
+                  Offer Price: <s>{{ arrivedProduct4.price }}</s> ₹{{
+                    arrivedProduct4.offerPrice + "/-"
+                  }}
+                </div>
+              </div>
+              <div class="col-8">
+                <button class="btn btn-primary" style="float: right;">-</button>
+                <button class="btn btn-primary" style="float: right;">+</button>
+                <button class="btn btn-warning" style="float: right;">
+                  Quantity
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
