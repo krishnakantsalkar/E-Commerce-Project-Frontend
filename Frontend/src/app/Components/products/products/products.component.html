@@ -38,6 +38,8 @@
             autocomplete="off"
             placeholder="Search"
           />
+          <i class="fa fa-list" aria-hidden="true" (click)="list()"> list </i>
+          <i class="fa fa-th-large" aria-hidden="true" (click)="list()"> grid</i>
         </header>
         <div class="switch-case-Main" [ngSwitch]="choice">
           <!-- Mobile Phones Section -->
@@ -45,7 +47,11 @@
             <div class="mobile-section" *ngSwitchCase="1">
               <div class="row">
                 <!-- product 1 -->
-                <div class="col-3" *ngFor="let prods of arrivedProducts | filter: searchText">
+                <div
+                  class="col-3"
+                  *ngFor="let prods of arrivedProducts | filter: searchText"
+                  [ngClass]="{ 'col-12': grid }"
+                >
                   <div class="mobiles" align="center">
                     <span routerLink="/Products/product1">
                       {{ prods.name }}</span
@@ -93,7 +99,11 @@
             <div class="pc-section" *ngSwitchCase="2">
               <div class="row">
                 <!-- product 1 -->
-                <div class="col-3" *ngFor="let prods1 of arrivedProducts1 | filter: searchText">
+                <div
+                  class="col-3"
+                  *ngFor="let prods1 of arrivedProducts1 | filter: searchText"
+                  [ngClass]="{ 'col-12': grid }"
+                >
                   <div class="computers" align="center">
                     <span>{{ prods1.name }}</span>
                     <br />
@@ -115,10 +125,14 @@
                     <br />
                     <br />
                     <div class="computer-shadow">
-                      <a  class="add-to-cart-link" (click)="addtoCart1(prods1._id)"
+                      <a
+                        class="add-to-cart-link"
+                        (click)="addtoCart1(prods1._id)"
                         ><i class="fa fa-shopping-cart"></i> Add to cart</a
                       >
-                      <a  class="view-details-link" routerLink="/Products/product1/{{ prods1._id }}"
+                      <a
+                        class="view-details-link"
+                        routerLink="/Products/product1/{{ prods1._id }}"
                         ><i class="fa fa-link"></i> See details</a
                       >
                     </div>
@@ -133,7 +147,11 @@
             <div class="ac-section" *ngSwitchCase="3">
               <div class="row">
                 <!-- product 1 -->
-                <div class="col-3" *ngFor="let prods2 of arrivedProducts2 | filter: searchText">
+                <div
+                  class="col-3"
+                  *ngFor="let prods2 of arrivedProducts2 | filter: searchText"
+                  [ngClass]="{ 'col-12': grid }"
+                >
                   <div class="ac" align="center">
                     <span> {{ prods2.name }}</span>
                     <br />
@@ -154,11 +172,15 @@
                     <br />
                     <br />
                     <div class="ac-shadow">
-                      <a  class="add-to-cart-link" (click)="addtoCart2(prods2._id)"
+                      <a
+                        class="add-to-cart-link"
+                        (click)="addtoCart2(prods2._id)"
                         ><i class="fa fa-shopping-cart"></i> Add to cart</a
                       >
 
-                      <a  class="view-details-link" routerLink="/Products/product2/{{prods2._id}}"
+                      <a
+                        class="view-details-link"
+                        routerLink="/Products/product2/{{ prods2._id }}"
                         ><i class="fa fa-link"></i> See details</a
                       >
                     </div>
@@ -172,7 +194,11 @@
             <div class="fridge-section" *ngSwitchCase="4">
               <div class="row">
                 <!-- product 1 -->
-                <div class="col-3" *ngFor="let prods3 of arrivedProducts3 | filter: searchText">
+                <div
+                  class="col-3"
+                  *ngFor="let prods3 of arrivedProducts3 | filter: searchText"
+                  [ngClass]="{ 'col-12': grid }"
+                >
                   <div class="fridge" align="center">
                     <span>{{ prods3.name }}</span>
                     <br />
@@ -194,11 +220,15 @@
                     <br />
                     <br />
                     <div class="fridge-shadow">
-                      <a  class="add-to-cart-link" (click)="addtoCart3(prods3._id)"
+                      <a
+                        class="add-to-cart-link"
+                        (click)="addtoCart3(prods3._id)"
                         ><i class="fa fa-shopping-cart"></i> Add to cart</a
                       >
 
-                      <a  class="view-details-link" routerLink="/Products/product3/{{prods3._id}}"
+                      <a
+                        class="view-details-link"
+                        routerLink="/Products/product3/{{ prods3._id }}"
                         ><i class="fa fa-link"></i> See details</a
                       >
                     </div>

@@ -23,6 +23,7 @@ export class ProductsComponent implements OnInit {
   public cartStuff2: any[] = [];
   public cartStuff3: any[] = [];
 
+  public grid: boolean = false;
   // public arrivedFiles: IfileUploads;
 
   choice = 1;
@@ -119,4 +120,8 @@ export class ProductsComponent implements OnInit {
   // added() {
   //   this.add = !this.add;
   // }
+
+  list() {
+    this.grid = !this.grid;
+  }
 }
