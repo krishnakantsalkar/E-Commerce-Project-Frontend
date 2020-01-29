@@ -87,6 +87,9 @@
                         class="view-details-link"
                         ><i class="fa fa-link"></i> See details</a
                       >
+                      <a class="view-details-link" *ngIf="userLoggedIn===true" (click)="delete(prods._id)"
+                        ><i class="fa fa-lock"></i> Delete product</a
+                      >
                     </div>
                   </div>
 

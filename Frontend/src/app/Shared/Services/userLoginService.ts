@@ -32,6 +32,7 @@ export class userLoginData {
         map(item => {
           if (item && item.token) {
             localStorage.setItem("currentUser", JSON.stringify(item));
+            localStorage.setItem("currentToken", JSON.stringify(item.token));
             this.loggedIn.next(item);
             return item;
           }
@@ -41,6 +42,7 @@ export class userLoginData {
   }
   Logout() {
     localStorage.removeItem("currentUser");
+    localStorage.removeItem("currentToken");
     this.loggedIn.next(null);
     this.router.navigateByUrl("/Home");
   }

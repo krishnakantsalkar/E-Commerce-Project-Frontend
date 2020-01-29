@@ -6,4 +6,5 @@ export interface IuserLogin {
   token?: string;
   message?: string;
   error?: string;
+  admin?: string;
 }

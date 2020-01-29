@@ -28,10 +28,16 @@ export class productsData {
   public products3ApibyID: string =
     "http://localhost:4500/api/products/getProductsByID3/";
 
+  public deleteProductByID: string =
+    "http://localhost:4500/api/products/deleteProductsbyID/";
+
   // public product1: any =
   //   "http://localhost:4500/api/file/getFilesById/5e1d99e358778ea7042d6452";
   constructor(private http: HttpClient) {
-    this.header = new HttpHeaders({ "Content-Type": "application/json" });
+    this.header = new HttpHeaders({
+      "Content-Type": "application/json",
+      "x-auth-token": JSON.parse(localStorage.getItem("currentToken"))
+    });
   }
 
   listProducts(): Observable<Iproducts[]> {
@@ -66,5 +72,11 @@ export class productsData {
 
   cartProduct3(id): Observable<Iproducts> {
     return this.http.get<Iproducts>(this.products3ApibyID + id);
+  }
+
+  deleteProduct(id): Observable<Iproducts> {
+    return this.http.delete<Iproducts>(this.deleteProductByID + id, {
+      headers: this.header
+    });
   }
 }
