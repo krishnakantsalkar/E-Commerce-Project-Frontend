@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ElementRef } from "@angular/core";
 
 @Component({
   selector: "app-home",
@@ -8,7 +8,7 @@ import { Component, OnInit } from "@angular/core";
 export class HomeComponent implements OnInit {
   public likes: number;
   public activeHeart: boolean;
-  constructor() {}
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
     this.likes = 0;
@@ -27,5 +27,12 @@ export class HomeComponent implements OnInit {
 
   likeHeart() {
     this.activeHeart = !this.activeHeart;
+  }
+
+  ngAfterViewInit() {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = "https://weatherwidget.io/js/widget.min.js";
+    this.elementRef.nativeElement.appendChild(s);
   }
 }

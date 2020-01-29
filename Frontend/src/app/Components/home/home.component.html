@@ -304,55 +304,7 @@
       <div class="row">
         <div class="col-md-3">
           <div class="article-area">
-            <h4>Recent</h4>
-            <div class="news1">
-              <h5 style="font-weight:bold; padding:0 0 2px 10px">
-                <i class="fa fa-newspaper-o" aria-hidden="true"></i> Xiaomi
-              </h5>
-              <a
-                style="font-weight:bold; padding:0 0 2px 10px"
-                href="https://gadgets.ndtv.com/wearables/news/mi-band-5-leaked-cny-179-1-2-inch-amoled-display-nfc-2162104"
-              >
-                Mi Band 5 Said to Feature Larger AMOLED Display and Worldwide
-                NFC Support
-              </a>
-            </div>
-            <div class="news2">
-              <h5 style="font-weight:bold; padding:0 0 2px 10px">
-                <i class="fa fa-google" aria-hidden="true"></i> Google
-              </h5>
-              <a
-                style="font-weight:bold; padding:0 0 2px 10px"
-                href="https://gadgets.ndtv.com/apps/news/google-play-store-joker-bread-apps-malware-techniques-detailed-2162066"
-              >
-                Google Details ‘Joker’ Malware That Plagued the Play Store,
-                Claims It Removed 1,700 Apps
-              </a>
-            </div>
-            <div class="news3">
-              <h5 style="font-weight:bold; padding:0 0 2px 10px">
-                <i class="fa fa-amazon" aria-hidden="true"></i> Amazon
-              </h5>
-              <a
-                style="font-weight:bold; padding:0 0 2px 10px"
-                href="https://gadgets.ndtv.com/internet/news/amazon-ceo-jeff-bezos-to-visit-india-next-week-as-countrys-e-commerce-space-gets-fiercer-2162077"
-              >
-                Amazon CEO Jeff Bezos' Visit to India Next Week Comes at a
-                Crucial Time
-              </a>
-            </div>
-            <div class="news4">
-              <h5 style="font-weight:bold; padding:0 0 2px 10px">
-                <i class="fa fa-windows" aria-hidden="true"></i> Windows
-              </h5>
-              <a
-                style="font-weight:bold; padding:0 0 2px 10px"
-                href="https://gadgets.ndtv.com/laptops/news/microsoft-windows-7-software-support-january-14-end-of-life-google-chrome-extends-18-months-2162075"
-              >
-                Windows 7 Support Ends January 14, Chrome to Offer Windows 7
-                Support for 18 Months More: What to Do Next
-              </a>
-            </div>
+            <h4>Latest Weather Updates</h4>
             <!-- Like button function to be utilized later -->
             <!-- <button class="btn btn-primary" style="background-color: white;">
             <span
@@ -362,6 +314,8 @@
               (click)="likeHeart()"
             ></span>
           </button> -->
+          <div class="weather"><a class="weatherwidget-io" href="https://forecast7.com/en/19d0872d88/mumbai/" data-label_1="MUMBAI" data-label_2="WEATHER" data-theme="original" >MUMBAI WEATHER</a></div>
+<p align='center'>Weather Widget by Weatherwidget.io</p>
           </div>
         </div>
         <div class="col-md-9">
@@ -473,4 +427,7 @@
     </div>
     <!-- End footer bottom area -->
   </body>
-</html>
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
+  </html>
