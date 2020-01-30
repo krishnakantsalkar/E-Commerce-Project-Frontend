@@ -7,21 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <!-- User Cart page -->
     <div class="container cart-page">
       <div class="card">
+        <!-- User Cart Header -->
         <header class="card-header">
           <h2>User Cart</h2>
+          <!-- Empty Cart button if cart items present -->
           <button
             class="empty-cart btn btn-danger"
             (click)="removeItem()"
-            *ngIf="cartPageItems"
+            *ngIf="
+              cartPageItems ||
+              cartPageItems1 ||
+              cartPageItems2 ||
+              cartPageItems3
+            "
           >
             Empty Cart
           </button>
         </header>
+
+        <!-- User Cart Page Body -->
+
         <article class="card-body">
           <div class="cart-content">
+            <!-- Display cart items as Rows -->
             <div class="row">
+              <!-- Mobiles section -->
               <div class="col-4" *ngFor="let items of cartPageItems">
                 {{ items.name }}
                 <br />
@@ -45,6 +58,7 @@
             </div>
             <br />
             <div class="row">
+              <!-- Computers section -->
               <div class="col-4" *ngFor="let items1 of cartPageItems1">
                 {{ items1.name }}
                 <br />
@@ -67,6 +81,7 @@
               </div>
             </div>
             <div class="row">
+              <!-- AC section -->
               <div class="col-4" *ngFor="let items2 of cartPageItems2">
                 {{ items2.name }}
                 <br />
@@ -88,8 +103,8 @@
                 </button>
               </div>
             </div>
-
             <div class="row">
+              <!-- Fridge Section -->
               <div class="col-4" *ngFor="let items3 of cartPageItems3">
                 {{ items3.name }}
                 <br />
@@ -112,8 +127,68 @@
               </div>
             </div>
           </div>
-          <div class="cart-empty" *ngIf="!cartPageItems">
+          <!-- Show Empty Text if Cart Empty -->
+          <div
+            class="cart-empty"
+            *ngIf="
+              !cartPageItems &&
+              !cartPageItems1 &&
+              !cartPageItems2 &&
+              !cartPageItems3
+            "
+          >
             <h2>Cart Empty</h2>
+          </div>
+          <hr />
+
+          <!-- Finalize Cart Section -->
+
+          <div class="finalize-section">
+            <h2><u>Finalize Cart:</u></h2>
+            <br />
+            <div class="total container">
+              <!-- Mobiles -->
+              <div class="final-price" *ngFor="let items of cartPageItems">
+                <h5>
+                  <ul>
+                    <li>{{ items.name }}:{{ items.price + "/-" }}</li>
+                  </ul>
+                </h5>
+              </div>
+              <h3 *ngIf="total1 && total2">+</h3>
+              <!-- Computers -->
+              <div class="final-price" *ngFor="let items1 of cartPageItems1">
+                <h5>
+                  <ul>
+                    <li>{{ items1.name }} : {{ items1.price + "/-" }}</li>
+                  </ul>
+                </h5>
+              </div>
+              <h3 *ngIf="total2 && total3">+</h3>
+              <!-- Ac -->
+              <div class="final-price" *ngFor="let items2 of cartPageItems2">
+                <h5>
+                  <ul>
+                    <li>{{ items2.name }} : {{ items2.price + "/-" }}</li>
+                  </ul>
+                </h5>
+              </div>
+              <h3 *ngIf="total3 && total4">+</h3>
+              <!-- Fridge -->
+              <div class="final-price" *ngFor="let items3 of cartPageItems3">
+                <h5>
+                  <ul>
+                    <li>{{ items3.name }} : {{ items3.price + "/-" }}</li>
+                  </ul>
+                </h5>
+              </div>
+              <hr style="background-color: black;" />
+              <br />
+              <!-- Total Value of all cart Items -->
+              <h4>Your Total: {{ total1 + total2 + total3 + total4 }}</h4>
+              <!-- Checkout button -->
+              <button class="btn btn-danger checkout">Checkout</button>
+            </div>
           </div>
         </article>
       </div>
