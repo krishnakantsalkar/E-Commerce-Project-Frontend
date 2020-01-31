@@ -114,3 +114,8 @@ div.alll span:hover {
 div.mobiles a.add-to-cart-link:active {
   background-color: red;
 }
+
+.wishlist {
+  margin-left: -8px;
+  margin-top: 5px;
+}

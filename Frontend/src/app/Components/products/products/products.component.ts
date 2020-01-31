@@ -30,6 +30,14 @@ export class ProductsComponent implements OnInit {
 
   choice = 1;
 
+  public likes: number;
+  public activeHeart: boolean;
+
+  public wishlistStuff: any[] = [];
+  public wishlistStuff1: any[] = []; // wishlist implementation
+  public wishlistStuff2: any[] = [];
+  public wishlistStuff3: any[] = [];
+
   constructor(private products: productsData) {}
 
   ngOnInit() {
@@ -65,6 +73,8 @@ export class ProductsComponent implements OnInit {
     } else {
       return;
     }
+
+    this.likes = 0;
   }
 
   setChoice(choice) {
@@ -158,5 +168,72 @@ export class ProductsComponent implements OnInit {
         alert("You are not Admin!");
       }
     );
+  }
+
+  like() {
+    this.likes++;
+  }
+  dislike() {
+    this.likes--;
+    if (this.likes < 0) {
+      this.likes = 0;
+    }
+    return this.likes;
+  }
+
+  likeHeart() {
+    this.activeHeart = !this.activeHeart;
+  }
+
+  addtoWishlist(id) {
+    this.products.wishlistProduct(id).subscribe(item => {
+      console.log(item);
+      this.wishlistStuff.push(item);
+      console.log(this.wishlistStuff);
+      localStorage.setItem("wishlist", JSON.stringify(this.wishlistStuff));
+      alert("Added to Wishlist");
+      if (this.wishlistStuff.length === 3) {
+        location.reload();
+      }
+    });
+  }
+
+  addtoWishlist1(id) {
+    this.products.wishlistProduct1(id).subscribe(item => {
+      console.log(item);
+      this.wishlistStuff1.push(item);
+      console.log(this.wishlistStuff1);
+      localStorage.setItem("wishlist1", JSON.stringify(this.wishlistStuff1));
+      alert("Added to Wishlist");
+      if (this.wishlistStuff1.length === 3) {
+        location.reload();
+      }
+    });
+  }
+
+  addtoWishlist2(id) {
+    this.products.wishlistProduct2(id).subscribe(item => {
+      console.log(item);
+      this.wishlistStuff2.push(item);
+      console.log(this.wishlistStuff2);
+      localStorage.setItem("wishlist2", JSON.stringify(this.wishlistStuff2));
+      alert("Added to Wishlist");
+      if (this.wishlistStuff2.length === 3) {
+        location.reload();
+      }
+    });
+  }
+
+  addtoWishlist3(id) {
+    this.products.wishlistProduct3(id).subscribe(item => {
+      console.log(item);
+      this.wishlistStuff3.push(item);
+      console.log(this.wishlistStuff3);
+      localStorage.setItem("wishlist3", JSON.stringify(this.wishlistStuff3));
+      alert("Added to Wishlist");
+      if (this.wishlistStuff3.length === 3) {
+        location.reload();
+      }
+    });
   }
 }

@@ -11,8 +11,126 @@
       <div class="card">
         <header class="card-header">
           <h3>User's Wishlist</h3>
+          <button
+            class="btn btn-primary"
+            (click)="removeItem()"
+            *ngIf="
+              wishlistItems ||
+              wishlistItems1 ||
+              wishlistItems2 ||
+              wishlistItems3
+            "
+          >
+            Remove Wishlist Items
+          </button>
         </header>
-        <article class="card-body"></article>
+        <article class="card-body">
+          <div class="wishlist-body">
+            <div class="row">
+              <div
+                class="col-4 wishlist-items"
+                *ngFor="let wish of wishlistItems"
+              >
+                {{ wish.name }}
+                <br />
+                <img src="{{ wish.image }}" />
+                <div class="price">MRP: ₹{{ wish.price + "/-" }}</div>
+                <h5>Quantity: {{ wish.quantity }}</h5>
+                <div class="offer-price" *ngIf="wish.isTodayOffer === true">
+                  Offer Price: <s>{{ wish.price }}</s> ₹{{
+                    wish.offerPrice + "/-"
+                  }}
+                  <br />
+                  Final Price: {{ wish.offerPrice + "/-" }}
+                </div>
+                <button class="btn btn-success" (click)="removeItem1()">
+                  Remove from wishlist
+                </button>
+                <hr />
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="col-4 wishlist-items"
+                *ngFor="let wish1 of wishlistItems1"
+              >
+                {{ wish1.name }}
+                <br />
+                <img src="{{ wish1.image }}" />
+                <div class="price">MRP: ₹{{ wish1.price + "/-" }}</div>
+                <h5>Quantity: {{ wish1.quantity }}</h5>
+                <div class="offer-price" *ngIf="wish1.isTodayOffer === true">
+                  Offer Price: <s>{{ wish1.price }}</s> ₹{{
+                    wish1.offerPrice + "/-"
+                  }}
+                  <br />
+                  Final Price: {{ wish1.offerPrice + "/-" }}
+                </div>
+                <button class="btn btn-success" (click)="removeItem2()">
+                  Remove from wishlist
+                </button>
+                <hr />
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="col-4 wishlist-items"
+                *ngFor="let wish2 of wishlistItems2"
+              >
+                {{ wish2.name }}
+                <br />
+                <img src="{{ wish2.image }}" />
+                <div class="price">MRP: ₹{{ wish2.price + "/-" }}</div>
+                <h5>Quantity: {{ wish2.quantity }}</h5>
+                <div class="offer-price" *ngIf="wish2.isTodayOffer === true">
+                  Offer Price: <s>{{ wish2.price }}</s> ₹{{
+                    wish2.offerPrice + "/-"
+                  }}
+                  <br />
+                  Final Price: {{ wish2.offerPrice + "/-" }}
+                </div>
+                <button class="btn btn-success" (click)="removeItem3()">
+                  Remove from wishlist
+                </button>
+                <hr />
+              </div>
+            </div>
+            <div class="row">
+              <div
+                class="col-4 wishlist-items"
+                *ngFor="let wish3 of wishlistItems3"
+              >
+                {{ wish3.name }}
+                <br />
+                <img src="{{ wish3.image }}" />
+                <div class="price">MRP: ₹{{ wish3.price + "/-" }}</div>
+                <h5>Quantity: {{ wish3.quantity }}</h5>
+                <div class="offer-price" *ngIf="wish3.isTodayOffer === true">
+                  Offer Price: <s>{{ wish3.price }}</s> ₹{{
+                    wish3.offerPrice + "/-"
+                  }}
+                  <br />
+                  Final Price: {{ wish3.offerPrice + "/-" }}
+                </div>
+                <button class="btn btn-success" (click)="removeItem4()">
+                  Remove from wishlist
+                </button>
+                <hr />
+              </div>
+            </div>
+          </div>
+          <div
+            class="wishlist-empty"
+            *ngIf="
+              !wishlistItems &&
+              !wishlistItems1 &&
+              !wishlistItems2 &&
+              !wishlistItems3
+            "
+          >
+            <h2>Wishlist Empty</h2>
+          </div>
+        </article>
       </div>
     </div>
   </body>

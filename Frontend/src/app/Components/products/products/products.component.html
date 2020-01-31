@@ -56,6 +56,10 @@
                     <span routerLink="/Products/product1">
                       {{ prods.name }}</span
                     >
+                    <div class="wishlist-mobiles">
+                      <button class="wishlist btn btn-info" (click)="addtoWishlist(prods._id)"> add to wishlist
+                    </button>
+                    </div>
                     <br />
                     <br />
                     <div class="image-area">
@@ -109,6 +113,10 @@
                 >
                   <div class="computers" align="center">
                     <span>{{ prods1.name }}</span>
+                    <div class="wishlist-computers">
+                      <button class="wishlist btn btn-info" (click)="addtoWishlist1(prods1._id)"> add to wishlist
+                    </button>
+                    </div>
                     <br />
                     <br />
                     <div class="image-area">
@@ -157,6 +165,10 @@
                 >
                   <div class="ac" align="center">
                     <span> {{ prods2.name }}</span>
+                    <div class="wishlist-AC">
+                      <button class="wishlist btn btn-info" (click)="addtoWishlist2(prods2._id)"> add to wishlist
+                    </button>
+                    </div>
                     <br />
                     <br />
                     <div class="image-area">
@@ -204,6 +216,10 @@
                 >
                   <div class="fridge" align="center">
                     <span>{{ prods3.name }}</span>
+                    <div class="wishlist-Fridge">
+                      <button class="wishlist btn btn-info" (click)="addtoWishlist3(prods3._id)"> add to wishlist
+                    </button>
+                    </div>
                     <br />
                     <br />
                     <div class="image-area">
