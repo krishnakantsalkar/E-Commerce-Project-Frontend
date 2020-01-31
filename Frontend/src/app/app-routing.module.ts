@@ -16,7 +16,8 @@ const routes: Route[] = [
   },
   {
     path: "Products",
-    loadChildren: "./Components/products/products.module#ProductsModule"
+    loadChildren: "./Components/products/products.module#ProductsModule",
+    canActivate: [authGuard]
   },
   {
     path: "UserLogin",
@@ -69,8 +70,8 @@ const routes: Route[] = [
 
   {
     path: "Cart",
-    loadChildren: "./Components/cart/cart.module#CartModule"
-    // canActivate: [authGuard]
+    loadChildren: "./Components/cart/cart.module#CartModule",
+    canActivate: [authGuard]
   },
 
   // Wishlist Page Routes
