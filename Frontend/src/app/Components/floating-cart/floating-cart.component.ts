@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { userLoginData } from "../../Shared/Services/userLoginService";
 
 @Component({
   selector: "app-floating-cart",
@@ -15,7 +16,9 @@ export class FloatingCartComponent implements OnInit {
   public count1: number;
   public count2: number;
   public count3: number;
-  constructor() {}
+
+  public checkStatus: any;
+  constructor(private logoutMethod: userLoginData) {}
 
   ngOnInit() {
     this.cartItems = JSON.parse(localStorage.getItem("product"));
@@ -50,6 +53,10 @@ export class FloatingCartComponent implements OnInit {
     } else {
       console.log("cart empty");
     }
+
+    this.logoutMethod.currentUsers.subscribe(data => {
+      this.checkStatus = data;
+    });
   }
 
   removefromCart() {
