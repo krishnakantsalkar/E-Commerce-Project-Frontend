@@ -10,14 +10,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Main page */
 .cart-page {
   margin-top: 100px;
 }
 
+/* buy now button */
 .buy-now {
   margin-right: 10px;
 }
 
+/* checkout button */
 .checkout {
   margin-left: 5px;
 }

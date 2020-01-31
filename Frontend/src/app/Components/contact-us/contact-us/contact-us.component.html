@@ -8,11 +8,12 @@
   </head>
   <body>
     <p>contact-us works!</p>
-
+    <!--  Contact us  -->
     <div class="contact-us-section">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow lightSpeedIn">
+            <!-- Embedded Google Map -->
             <div class="embed-responsive embed-responsive-16by9">
               <iframe
                 class="embed-responsive-item"
@@ -26,6 +27,7 @@
             </div>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 wow fadeInLeft">
+            <!-- Contact Us form -->
             <form
               [formGroup]="contactUs_form"
               (ngSubmit)="Save(contactUs_form.value)"

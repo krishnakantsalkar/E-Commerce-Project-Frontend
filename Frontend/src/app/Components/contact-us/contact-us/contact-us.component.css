@@ -1,3 +1,4 @@
+/* main backgroung image */
 body,
 html {
   background-image: url(../../../../assets/img/stock_background.jpg);
@@ -12,27 +13,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* contact us  */
 .contact-us-section {
   margin-top: 100px;
 }
-
+/* label  */
 label {
   color: black;
 }
-
+/* mail */
 .email {
   padding-top: 20px;
 }
-
+/* message */
 .message {
   padding-top: 20px;
 }
-
+/* submit button */
 button {
   margin-top: 40px;
   float: right;
 }
-
+/* form */
 form {
   background-color: white;
   padding: 20px 20px 33px 20px;

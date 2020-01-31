@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
+    <!-- Floating menu -->
     <div class="content" *ngIf="checkStatus">
       <div class="floating-menu">
         <div class="dropup">
@@ -31,6 +32,7 @@
             </h3>
             <br />
             <div class="container" *ngIf="cartItems">
+              <!-- cart section mobile -->
               <div
                 class="cartitems"
                 *ngFor="let cart of cartItems"
@@ -46,6 +48,7 @@
               </button>
             </div>
             <div class="container" *ngIf="cartItems1">
+              <!-- cart section computers -->
               <div
                 class="cartitems1"
                 *ngFor="let cart1 of cartItems1"
@@ -61,6 +64,7 @@
               </button>
             </div>
             <div class="container" *ngIf="cartItems2">
+              <!-- cart section AC -->
               <div
                 class="cartitems"
                 *ngFor="let cart2 of cartItems2"
@@ -76,6 +80,7 @@
               </button>
             </div>
             <div class="container" *ngIf="cartItems3">
+              <!-- cart section fridge -->
               <div
                 class="cartitems"
                 *ngFor="let cart3 of cartItems3"

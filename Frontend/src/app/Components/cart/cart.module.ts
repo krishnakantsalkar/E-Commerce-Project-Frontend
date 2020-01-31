@@ -6,6 +6,6 @@ import { cart } from "./cart-routes";
 
 @NgModule({
   declarations: [CartComponent],
-  imports: [CommonModule, RouterModule.forChild(cart)]
+  imports: [CommonModule, RouterModule.forChild(cart)] // child routing and lazy loading
 })
 export class CartModule {}

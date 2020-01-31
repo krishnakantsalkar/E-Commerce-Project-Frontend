@@ -16,7 +16,7 @@ export class SingleProduct3Component implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.AR.params.subscribe(item => {
+    this.AR.params.subscribe(item => {     // Parameterized routing to get single product
       let id = item["id"];
       this.singleproduct.getProduct3(id).subscribe(item => {
         console.log(item);

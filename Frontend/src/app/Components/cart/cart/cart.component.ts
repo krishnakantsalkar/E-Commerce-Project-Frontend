@@ -28,7 +28,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cartPageItems = JSON.parse(localStorage.getItem("product"));
 
-    this.cartPageItems1 = JSON.parse(localStorage.getItem("product1"));
+    this.cartPageItems1 = JSON.parse(localStorage.getItem("product1")); // load cart items from storage
 
     this.cartPageItems2 = JSON.parse(localStorage.getItem("product2"));
 
@@ -38,7 +38,7 @@ export class CartComponent implements OnInit {
 
     this.checkPrice2();
 
-    this.checkPrice3();
+    this.checkPrice3(); //check the price functions and store
 
     this.checkPrice4();
 
@@ -46,7 +46,7 @@ export class CartComponent implements OnInit {
   }
 
   removeItem() {
-    localStorage.removeItem("product");
+    localStorage.removeItem("product"); // remove added to cart items
     localStorage.removeItem("product1");
     localStorage.removeItem("product2");
     localStorage.removeItem("product3");

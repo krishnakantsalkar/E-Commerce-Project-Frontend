@@ -4,52 +4,62 @@
       <a class="navbar-logo"
         ><img class="logo" src="../../../assets/img/mylogo.png"
       /></a>
-      <li>
-        <a class="nav-link active" routerLink="/Home">
-          <i class="fa fa-home fa-fw" aria-hidden="true"></i> Home
+      <li> 
+        <!-- Home tab -->
+        <a class="nav-link active" routerLink="/Home">         
+          <i class="fa fa-home fa-fw" aria-hidden="true"></i> Home  
         </a>
       </li>
       <li>
+        <!-- products tab -->
         <a class="nav-link products" routerLink="/Products"
           ><i class="fa fa-shopping-bag fa-fw"></i> Products</a
         >
       </li>
       <li>
+        <!-- contact us tab -->
         <a class="nav-link contact" routerLink="/ContactUs"
           ><i class="fa fa-phone fa-fw" aria-hidden="true"></i> Contact Us</a
         >
       </li>
       <li *ngIf="!checkStatus">
+        <!-- User registration tab -->
         <a class="nav-link register" routerLink="/UserRegistration"
           ><i class="fa fa-user fa-fw" aria-hidden="true"></i> Register</a
         >
       </li>
       <li *ngIf="!checkStatus">
+        <!-- User login tab -->
         <a class="nav-link login" routerLink="/UserLogin"
           ><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i> Login</a
         >
       </li>
       <li>
+        <!-- About tab -->
         <a class="nav-link about" routerLink="/About"
           ><i class="fa fa-info fa-fw" aria-hidden="true"></i> About</a
         >
       </li>
       <li class="myprofile" *ngIf="checkStatus">
+        <!-- My profile tab -->
         <a class="nav-link" routerLink="/MyProfile"
           ><i class="fa fa-user fa-fw" aria-hidden="true"></i> My-Profile</a
         >
       </li>
       <li class="logout" *ngIf="checkStatus">
+        <!-- Logout tab -->
         <a class="nav-link " routerLink="" (click)="Logout()">
           Logout
         </a>
       </li>
       <li class="wishlist" *ngIf="checkStatus">
+        <!-- Wishlist tab -->
         <a class="nav-link " routerLink="/Wishlist">
           Wishlist
         </a>
       </li>
       <li class="cart">
+        <!-- Cart tab -->
         <a class="nav-link " routerLink="/Cart">
           <i class="fa fa-cart-plus fa-fw" aria-hidden="true"></i>
           Cart

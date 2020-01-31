@@ -1,3 +1,4 @@
+/* Main background image */
 body,
 html {
   background-image: url("../../../../assets/img/stock_background.jpg");
@@ -10,6 +11,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Card */
 .card {
   margin-top: 120px;
 }

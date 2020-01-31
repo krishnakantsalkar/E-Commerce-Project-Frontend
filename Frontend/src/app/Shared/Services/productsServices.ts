@@ -40,8 +40,10 @@ export class productsData {
     });
   }
 
+  //  Display products
+
   listProducts(): Observable<Iproducts[]> {
-    return this.http.get<Iproducts[]>(this.productsApiAll);
+    return this.http.get<Iproducts[]>(this.productsApiAll);  // get all products section wise
   }
 
   listProducts1(): Observable<Iproducts[]> {
@@ -58,8 +60,11 @@ export class productsData {
   // getImage1(): Observable<IfileUploads> {
   //   return this.http.get<IfileUploads>(this.product1);
   // }
+
+  //  Cart implementation
+
   cartProduct(id): Observable<Iproducts> {
-    return this.http.get<Iproducts>(this.productsApibyID + id);
+    return this.http.get<Iproducts>(this.productsApibyID + id);   //get product by id APIs for cart
   }
 
   cartProduct1(id): Observable<Iproducts> {
@@ -74,14 +79,17 @@ export class productsData {
     return this.http.get<Iproducts>(this.products3ApibyID + id);
   }
 
-  deleteProduct(id): Observable<Iproducts> {
+  deleteProduct(id): Observable<Iproducts> {          // delete product by id (Admin only)
     return this.http.delete<Iproducts>(this.deleteProductByID + id, {
       headers: this.header
     });
   }
 
+
+  //  Wishlist 
+
   wishlistProduct(id): Observable<Iproducts> {
-    return this.http.get<Iproducts>(this.productsApibyID + id);
+    return this.http.get<Iproducts>(this.productsApibyID + id);   // get products by id for wishlist
   }
 
   wishlistProduct1(id): Observable<Iproducts> {

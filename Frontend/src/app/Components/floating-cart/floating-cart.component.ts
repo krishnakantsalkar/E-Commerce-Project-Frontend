@@ -9,11 +9,11 @@ import { userLoginData } from "../../Shared/Services/userLoginService";
 export class FloatingCartComponent implements OnInit {
   public cartItems;
   public cartItems1;
-  public cartItems2;
+  public cartItems2;          // Get cart items and store in these properties
   public cartItems3;
   public cartCount;
   public count: number;
-  public count1: number;
+  public count1: number;      //show total count of cart items to display on floating icon
   public count2: number;
   public count3: number;
 
@@ -23,7 +23,7 @@ export class FloatingCartComponent implements OnInit {
   ngOnInit() {
     this.cartItems = JSON.parse(localStorage.getItem("product"));
     console.log(this.cartItems);
-    if (this.cartItems) {
+    if (this.cartItems) {                    // get mobiles in cart from local storage
       this.count = this.cartItems.length;
       console.log(this.count);
     } else {
@@ -32,7 +32,7 @@ export class FloatingCartComponent implements OnInit {
 
     this.cartItems1 = JSON.parse(localStorage.getItem("product1"));
     console.log(this.cartItems1);
-    if (this.cartItems1) {
+    if (this.cartItems1) {                    // get computers in cart from local storage
       this.count1 = this.cartItems1.length;
     } else {
       console.log("cart empty");
@@ -40,7 +40,7 @@ export class FloatingCartComponent implements OnInit {
 
     this.cartItems2 = JSON.parse(localStorage.getItem("product2"));
     console.log(this.cartItems2);
-    if (this.cartItems2) {
+    if (this.cartItems2) {                    // get AC in cart from local storage
       this.count2 = this.cartItems2.length;
     } else {
       console.log("cart empty");
@@ -48,38 +48,34 @@ export class FloatingCartComponent implements OnInit {
 
     this.cartItems3 = JSON.parse(localStorage.getItem("product3"));
     console.log(this.cartItems3);
-    if (this.cartItems3) {
+    if (this.cartItems3) {                    // get fridge in cart from local storage
       this.count3 = this.cartItems3.length;
     } else {
       console.log("cart empty");
     }
 
     this.logoutMethod.currentUsers.subscribe(data => {
-      this.checkStatus = data;
+      this.checkStatus = data;                // To show floating cart after user logins
     });
   }
 
   removefromCart() {
-    localStorage.removeItem("product");
-
+    localStorage.removeItem("product"); // remove mobiles from cart
     location.reload();
   }
 
   removefromCart1() {
-    localStorage.removeItem("product1");
-
+    localStorage.removeItem("product1"); // remove computers from cart
     location.reload();
   }
 
   removefromCart2() {
-    localStorage.removeItem("product2");
-
+    localStorage.removeItem("product2"); // remove AC from cart
     location.reload();
   }
 
   removefromCart3() {
-    localStorage.removeItem("product3");
-
+    localStorage.removeItem("product3"); // remove fridge from cart
     location.reload();
   }
 }

@@ -6,6 +6,6 @@ import { About } from "./about-routes";
 
 @NgModule({
   declarations: [AboutComponent],
-  imports: [CommonModule, RouterModule.forChild(About)]
+  imports: [CommonModule, RouterModule.forChild(About)] // forChild routing & Lazy Loading
 })
 export class AboutModule {}

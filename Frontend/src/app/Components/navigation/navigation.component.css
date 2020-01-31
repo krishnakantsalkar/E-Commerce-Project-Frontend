@@ -57,10 +57,12 @@ li a:hover {
   margin-left: 100px;
 }
 
+/* navbar */
 .nav-bar {
   width: 100%;
 }
 
+/* Cart */
 .cart {
   margin-left: 100px;
 }

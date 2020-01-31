@@ -1,3 +1,4 @@
+/* Main background image */
 body,
 html {
   background-image: url("../../../../assets/img/stock_background.jpg");
@@ -10,7 +11,7 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
+/* main login card */
 .card {
   margin-top: 120px;
 }

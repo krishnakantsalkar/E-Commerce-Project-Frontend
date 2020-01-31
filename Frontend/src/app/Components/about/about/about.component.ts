@@ -10,6 +10,6 @@ export class AboutComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    new WOW({ live: false }).init();
+    new WOW({ live: false }).init(); //Wow animations
   }
 }

@@ -11,6 +11,7 @@
       <div class="card">
         <header class="card-header">
           <h3>User's Wishlist</h3>
+          <!-- remove all wishlist items button -->
           <button
             class="btn btn-primary"
             (click)="removeItem()"
@@ -24,9 +25,11 @@
             Remove Wishlist Items
           </button>
         </header>
+        <!-- Wishlist content -->
         <article class="card-body">
           <div class="wishlist-body">
             <div class="row">
+              <!-- mobile section -->
               <div
                 class="col-4 wishlist-items"
                 *ngFor="let wish of wishlistItems"
@@ -50,6 +53,7 @@
               </div>
             </div>
             <div class="row">
+              <!-- computers section -->
               <div
                 class="col-4 wishlist-items"
                 *ngFor="let wish1 of wishlistItems1"
@@ -73,6 +77,7 @@
               </div>
             </div>
             <div class="row">
+              <!-- Ac section -->
               <div
                 class="col-4 wishlist-items"
                 *ngFor="let wish2 of wishlistItems2"
@@ -96,6 +101,7 @@
               </div>
             </div>
             <div class="row">
+              <!-- fridge section -->
               <div
                 class="col-4 wishlist-items"
                 *ngFor="let wish3 of wishlistItems3"
@@ -119,6 +125,7 @@
               </div>
             </div>
           </div>
+          <!-- show this div when wishlist empty -->
           <div
             class="wishlist-empty"
             *ngIf="

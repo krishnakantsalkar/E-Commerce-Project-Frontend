@@ -9,11 +9,11 @@ import { NewsRss } from "../../../Shared/Model/rssfeed";
   styleUrls: ["./rssfeed.component.css"]
 })
 export class RssfeedComponent implements OnInit {
-  public RssData: NewsRss;
+  public RssData: NewsRss;  //rss feed model
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.GetRssFeedData();
+    this.GetRssFeedData(); // get rss feed on init page
   }
 
   GetRssFeedData() {
@@ -22,7 +22,7 @@ export class RssfeedComponent implements OnInit {
       responseType: "text"
     };
     this.http
-      .get<any>("https://gadgets.ndtv.com/rss/feeds", requestOptions)
+      .get<any>("https://gadgets.ndtv.com/rss/feeds", requestOptions) //get data from rss feed
       .subscribe(data => {
         let parseString = xml2js.parseString;
         parseString(data, (err, result: NewsRss) => {
