@@ -79,4 +79,20 @@ export class productsData {
       headers: this.header
     });
   }
+
+  wishlistProduct(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.productsApibyID + id);
+  }
+
+  wishlistProduct1(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.products1ApibyID + id);
+  }
+
+  wishlistProduct2(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.products2ApibyID + id);
+  }
+
+  wishlistProduct3(id): Observable<Iproducts> {
+    return this.http.get<Iproducts>(this.products3ApibyID + id);
+  }
 }
