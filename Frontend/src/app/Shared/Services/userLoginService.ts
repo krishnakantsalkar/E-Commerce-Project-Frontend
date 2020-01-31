@@ -43,6 +43,14 @@ export class userLoginData {
   Logout() {
     localStorage.removeItem("currentUser");
     localStorage.removeItem("currentToken");
+    localStorage.removeItem("product");
+    localStorage.removeItem("product1");
+    localStorage.removeItem("product2");
+    localStorage.removeItem("product3");
+    localStorage.removeItem("wishlist");
+    localStorage.removeItem("wishlist1");
+    localStorage.removeItem("wishlist2");
+    localStorage.removeItem("wishlist3");
     this.loggedIn.next(null);
     this.router.navigateByUrl("/Home");
   }
