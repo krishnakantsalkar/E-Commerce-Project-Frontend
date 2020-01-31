@@ -44,12 +44,17 @@
           Logout
         </a>
       </li>
-      <!-- <li class="cart">
-        <a class="nav-link " routerLink="">
+      <li class="wishlist" *ngIf="checkStatus">
+        <a class="nav-link " routerLink="/Wishlist">
+          Wishlist
+        </a>
+      </li>
+      <li class="cart">
+        <a class="nav-link " routerLink="/Cart">
           <i class="fa fa-cart-plus fa-fw" aria-hidden="true"></i>
           Cart
         </a>
-      </li> -->
+      </li>
     </ul>
   </div>
 </nav>
