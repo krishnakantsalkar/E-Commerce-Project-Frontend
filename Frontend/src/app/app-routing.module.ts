@@ -16,7 +16,7 @@ const routes: Route[] = [
   },
   {
     path: "Products",              // Products routing
-    loadChildren: "./Components/products/products.module#ProductsModule", 
+    loadChildren: "./Components/products/products.module#ProductsModule",
     canActivate: [authGuard]
   },
   {
@@ -51,7 +51,7 @@ const routes: Route[] = [
       "./Components/single-product1/single-product1.module#SingleProduct1Module"
   },
   {
-    path: "Products/product1/:id",       // computers 
+    path: "Products/product1/:id",       // computers
     loadChildren:
       "./Components/single-product2/single-product2.module#SingleProduct2Module"
   },
@@ -79,6 +79,20 @@ const routes: Route[] = [
   {
     path: "Wishlist",
     loadChildren: "./Components/wishlist/wishlist.module#WishlistModule"
+  },
+
+  // Forgot Password Routes
+
+  {
+    path: "ForgotPassword",
+    loadChildren:
+      "./Components/forgotpassword/forgotpassword.module#ForgotpasswordModule"
+  },
+
+  {
+    path: "ResetPassword/:id",
+    loadChildren:
+      "./Components/resetpassword/resetpassword.module#ResetpasswordModule"
   }
 ];
 
