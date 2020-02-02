@@ -74,7 +74,7 @@ export class ProductsComponent implements OnInit {
       return;
     }
 
-    this.likes = 0;
+    this.likes = 0; // like counter
   }
 
   setChoice(choice) {
@@ -98,6 +98,7 @@ export class ProductsComponent implements OnInit {
       this.cartStuff.push(item);
       console.log(this.cartStuff);
       localStorage.setItem("product", JSON.stringify(this.cartStuff));
+      alert("Added to Cart!");
       if (this.cartStuff.length === 3) {
         alert("You can add only 3 products in cart at a time!");
         location.reload();
@@ -112,6 +113,7 @@ export class ProductsComponent implements OnInit {
       this.cartStuff1.push(item);
       console.log(this.cartStuff1);
       localStorage.setItem("product1", JSON.stringify(this.cartStuff1));
+      alert("Added to Cart!");
       if (this.cartStuff1.length === 3) {
         alert("You can add only 3 products in cart at a time!");
         location.reload();
@@ -126,6 +128,7 @@ export class ProductsComponent implements OnInit {
       this.cartStuff2.push(item);
       console.log(this.cartStuff2);
       localStorage.setItem("product2", JSON.stringify(this.cartStuff2));
+      alert("Added to Cart!");
       if (this.cartStuff2.length === 3) {
         alert("You can add only 3 products in cart at a time!");
         location.reload();
@@ -140,6 +143,7 @@ export class ProductsComponent implements OnInit {
       this.cartStuff3.push(item);
       console.log(this.cartStuff3);
       localStorage.setItem("product3", JSON.stringify(this.cartStuff3));
+      alert("Added to Cart!");
       if (this.cartStuff3.length === 3) {
         alert("You can add only 3 products in cart at a time!");
         location.reload();
@@ -171,9 +175,10 @@ export class ProductsComponent implements OnInit {
   }
 
   like() {
-    this.likes++;
+    this.likes++; // like counter method
   }
   dislike() {
+    //like counter method
     this.likes--;
     if (this.likes < 0) {
       this.likes = 0;

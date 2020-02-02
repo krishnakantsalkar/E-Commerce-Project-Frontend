@@ -127,3 +127,11 @@ div.mobiles a.add-to-cart-link:active {
   margin-left: -8px;
   margin-top: 5px;
 }
+
+/* Search icon */
+div.input-container .fa-search {
+  top: 112px;
+  right: 30px;
+  position: absolute;
+  float: right;
+}
