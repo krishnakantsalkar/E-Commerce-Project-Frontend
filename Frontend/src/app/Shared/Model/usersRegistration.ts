@@ -12,4 +12,7 @@ export interface IuserReg {
   resetPasswordExpires?: Date;
   sendConfirmationMail?: string;
   updatedDate?: Date;
+
+  token?: string;
+  message?: string;
 }

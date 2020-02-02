@@ -15,6 +15,7 @@ export class UserRegistrationComponent implements OnInit {
   public userForm: FormGroup; // Main formGroup
   public userRegData: IuserReg; // Interface correlating to DB
   public error: any; // error handling to UI
+  public submitted: boolean;
 
   constructor(
     private fb: FormBuilder, // dependancy injection to form builder
@@ -42,26 +43,32 @@ export class UserRegistrationComponent implements OnInit {
           Validators.maxLength(100)
         ]
       ],
-      newsLetterCheck: ["", Validators.required],
+      newsLetterCheck: ["", [Validators.required, Validators.requiredTrue]],
       userLogin: this.fb.group({
         //sub form group
         userEmail: ["", [Validators.required, Validators.email]],
         userPassword: ["", [Validators.required, Validators.minLength(8)]]
       }),
-      termsAcceptCheck: ["", [Validators.required]]
+      termsAcceptCheck: ["", [Validators.required, Validators.requiredTrue]]
       // sendConfirmationMail?: []          // optional send confirmation mail check backend APIs
     });
   }
 
   Save(data) {
+    this.submitted = true;
+    if (!this.userForm.valid) {
+      return;
+    }
     // Save function on Submit in UI
     console.log(data);
     this.registerService.Register(data).subscribe(
       // services usage
       item => {
-        alert("Registration successfull!");
-        this.router.navigateByUrl("/Home");
-        console.log(item);
+        if (item.token) {
+          alert(item.message);
+          this.router.navigateByUrl("/Home");
+          console.log(item);
+        }
       },
       error => {
         //error handling to be shown to user
