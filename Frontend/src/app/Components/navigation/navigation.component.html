@@ -49,12 +49,14 @@
       <li class="logout" *ngIf="checkStatus">
         <!-- Logout tab -->
         <a class="nav-link " routerLink="" (click)="Logout()">
+          <i class="fa fa-key" aria-hidden="true"></i>
           Logout
         </a>
       </li>
       <li class="wishlist" *ngIf="checkStatus">
         <!-- Wishlist tab -->
         <a class="nav-link " routerLink="/Wishlist">
+          <i class="fa fa-heart" aria-hidden="true"></i>
           Wishlist
         </a>
       </li>
