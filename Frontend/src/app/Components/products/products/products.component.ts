@@ -4,6 +4,9 @@ import { productsData } from "../../../Shared/Services/productsServices";
 import { Iproducts } from "../../../Shared/Model/products";
 // import { IfileUploads } from "../../../Shared/Model/fileUploads";
 import { WOW } from "wowjs/dist/wow.min"; //Enable WOW animations
+import { cartData } from "../../../Shared/Services/cartServices";
+import { Icart } from "../../../Shared/Model/cartModel";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-products",
@@ -38,7 +41,7 @@ export class ProductsComponent implements OnInit {
   public wishlistStuff2: any[] = [];
   public wishlistStuff3: any[] = [];
 
-  constructor(private products: productsData) {}
+  constructor(private products: productsData, private cartAPI: cartData) {}
 
   ngOnInit() {
     new WOW({ live: false }).init(); //enable WOW animations
@@ -239,6 +242,92 @@ export class ProductsComponent implements OnInit {
       if (this.wishlistStuff3.length === 3) {
         location.reload();
       }
+    });
+  }
+
+  // Add to cart by using API
+
+  addCartByApi(id) {
+    this.products.cartProduct(id).subscribe(item => {
+      let whichUser = JSON.parse(localStorage.getItem("currentUser"));
+      let thisUser = whichUser.id;
+      let prodID = item._id;
+      let quantity = item.quantity;
+      let totalPrice = item.price;
+      let cartItems: Icart = {
+        cartItem: { thisUser, prodID, quantity, totalPrice }
+      };
+      this.cartAPI.addtoCartbyApi(cartItems).subscribe(
+        data => {
+          console.log(data);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    });
+  }
+
+  addCartByApi1(id) {
+    this.products.cartProduct1(id).subscribe(item => {
+      let whichUser = JSON.parse(localStorage.getItem("currentUser"));
+      let thisUser = whichUser.id;
+      let prodID = item._id;
+      let quantity = item.quantity;
+      let totalPrice = item.price;
+      let cartItems: Icart = {
+        cartItem: { thisUser, prodID, quantity, totalPrice }
+      };
+      this.cartAPI.addtoCartbyApi(cartItems).subscribe(
+        data => {
+          console.log(data);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    });
+  }
+
+  addCartByApi2(id) {
+    this.products.cartProduct2(id).subscribe(item => {
+      let whichUser = JSON.parse(localStorage.getItem("currentUser"));
+      let thisUser = whichUser.id;
+      let prodID = item._id;
+      let quantity = item.quantity;
+      let totalPrice = item.price;
+      let cartItems: Icart = {
+        cartItem: { thisUser, prodID, quantity, totalPrice }
+      };
+      this.cartAPI.addtoCartbyApi(cartItems).subscribe(
+        data => {
+          console.log(data);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    });
+  }
+
+  addCartByApi3(id) {
+    this.products.cartProduct3(id).subscribe(item => {
+      let whichUser = JSON.parse(localStorage.getItem("currentUser"));
+      let thisUser = whichUser.id;
+      let prodID = item._id;
+      let quantity = item.quantity;
+      let totalPrice = item.price;
+      let cartItems: Icart = {
+        cartItem: { thisUser, prodID, quantity, totalPrice }
+      };
+      this.cartAPI.addtoCartbyApi(cartItems).subscribe(
+        data => {
+          console.log(data);
+        },
+        err => {
+          console.log(err);
+        }
+      );
     });
   }
 }

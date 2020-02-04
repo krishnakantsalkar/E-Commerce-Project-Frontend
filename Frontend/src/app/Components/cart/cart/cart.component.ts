@@ -42,7 +42,7 @@ export class CartComponent implements OnInit {
 
     this.checkPrice4();
 
-    this.sum();
+    this.sum(); // sum of individual arrays
   }
 
   removeItem() {
