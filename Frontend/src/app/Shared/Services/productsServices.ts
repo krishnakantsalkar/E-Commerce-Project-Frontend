@@ -9,7 +9,7 @@ export class productsData {
   public header: HttpHeaders;
 
   public productsApiAll: string =
-    "http://localhost:4500/api/products/getProducts"; // Mobile Phones
+    "http://localhost:4500/api/products/getProducts/"; // Mobile Phones
   public productsApibyID: string =
     "http://localhost:4500/api/products/getProductsByID/";
 
@@ -31,6 +31,8 @@ export class productsData {
   public deleteProductByID: string =
     "http://localhost:4500/api/products/deleteProductsbyID/";
 
+  // public pagination: string = "http://localhost:4500/api/products/";
+
   // public product1: any =
   //   "http://localhost:4500/api/file/getFilesById/5e1d99e358778ea7042d6452";
   constructor(private http: HttpClient) {
@@ -42,8 +44,9 @@ export class productsData {
 
   //  Display products
 
-  listProducts(): Observable<Iproducts[]> {
-    return this.http.get<Iproducts[]>(this.productsApiAll);  // get all products section wise
+  listProducts(page): Observable<Iproducts> {
+    //pagination page
+    return this.http.get<Iproducts>(this.productsApiAll + page); // get all products section wise
   }
 
   listProducts1(): Observable<Iproducts[]> {
@@ -64,7 +67,7 @@ export class productsData {
   //  Cart implementation
 
   cartProduct(id): Observable<Iproducts> {
-    return this.http.get<Iproducts>(this.productsApibyID + id);   //get product by id APIs for cart
+    return this.http.get<Iproducts>(this.productsApibyID + id); //get product by id APIs for cart
   }
 
   cartProduct1(id): Observable<Iproducts> {
@@ -79,17 +82,17 @@ export class productsData {
     return this.http.get<Iproducts>(this.products3ApibyID + id);
   }
 
-  deleteProduct(id): Observable<Iproducts> {          // delete product by id (Admin only)
+  deleteProduct(id): Observable<Iproducts> {
+    // delete product by id (Admin only)
     return this.http.delete<Iproducts>(this.deleteProductByID + id, {
       headers: this.header
     });
   }
 
-
-  //  Wishlist 
+  //  Wishlist
 
   wishlistProduct(id): Observable<Iproducts> {
-    return this.http.get<Iproducts>(this.productsApibyID + id);   // get products by id for wishlist
+    return this.http.get<Iproducts>(this.productsApibyID + id); // get products by id for wishlist
   }
 
   wishlistProduct1(id): Observable<Iproducts> {
@@ -103,4 +106,10 @@ export class productsData {
   wishlistProduct3(id): Observable<Iproducts> {
     return this.http.get<Iproducts>(this.products3ApibyID + id);
   }
+
+  // Pagination
+
+  // pageLogic(page) {
+  //   return this.http.get(this.pagination + page);
+  // }
 }

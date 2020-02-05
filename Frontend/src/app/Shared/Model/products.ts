@@ -15,4 +15,6 @@ export interface Iproducts {
       name: string;
     };
   };
+
+  dataSize?: any; // pagination
 }

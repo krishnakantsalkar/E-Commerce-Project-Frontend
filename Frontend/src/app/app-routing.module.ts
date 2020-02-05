@@ -8,37 +8,37 @@ const routes: Route[] = [
 
   {
     path: "",
-    component: HomeComponent         // Home component to load by default
+    component: HomeComponent // Home component to load by default
   },
   {
     path: "Home",
-    component: HomeComponent        // Home routing
+    component: HomeComponent // Home routing
   },
   {
-    path: "Products",              // Products routing
+    path: "Products/:page", // Products routing
     loadChildren: "./Components/products/products.module#ProductsModule",
     canActivate: [authGuard]
   },
   {
-    path: "UserLogin",           // userlogin routing
+    path: "UserLogin", // userlogin routing
     loadChildren: "./Components/login/login.module#LoginModule"
   },
   {
-    path: "UserRegistration",   // user registration routing
+    path: "UserRegistration", // user registration routing
     loadChildren:
       "./Components/registration/registration.module#RegistrationModule"
   },
   {
-    path: "About",           // about routing
+    path: "About", // about routing
     loadChildren: "./Components/about/about.module#AboutModule"
   },
   {
-    path: "ContactUs",         // contact us routing
+    path: "ContactUs", // contact us routing
     loadChildren: "./Components/contact-us/contact-us.module#ContactUsModule",
     canActivate: [authGuard]
   },
   {
-    path: "MyProfile",           //my profile routing
+    path: "MyProfile", //my profile routing
     loadChildren: "./Components/myprofile/myprofile.module#MyprofileModule",
     canActivate: [authGuard]
   },
@@ -46,22 +46,22 @@ const routes: Route[] = [
   // Single Products Page Routing!
 
   {
-    path: "Products/:id",        //mobiles
+    path: "Products/:id", //mobiles
     loadChildren:
       "./Components/single-product1/single-product1.module#SingleProduct1Module"
   },
   {
-    path: "Products/product1/:id",       // computers
+    path: "Products/product1/:id", // computers
     loadChildren:
       "./Components/single-product2/single-product2.module#SingleProduct2Module"
   },
   {
-    path: "Products/product2/:id",       // Ac
+    path: "Products/product2/:id", // Ac
     loadChildren:
       "./Components/single-product3/single-product3.module#SingleProduct3Module"
   },
   {
-    path: "Products/product3/:id",     //fridge
+    path: "Products/product3/:id", //fridge
     loadChildren:
       "./Components/single-product4/single-product4.module#SingleProduct4Module"
   },

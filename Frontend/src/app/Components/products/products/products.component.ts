@@ -41,31 +41,22 @@ export class ProductsComponent implements OnInit {
   public wishlistStuff2: any[] = [];
   public wishlistStuff3: any[] = [];
 
+  public pageNo; // pagination
+
   constructor(private products: productsData, private cartAPI: cartData) {}
 
   ngOnInit() {
     new WOW({ live: false }).init(); //enable WOW animations
 
-    this.products.listProducts().subscribe(data => {
-      // mobiles
-      this.arrivedProducts = data;
-      console.log(data);
-    });
-    this.products.listProducts1().subscribe(data => {
-      // computers
-      this.arrivedProducts1 = data;
-      console.log(data);
-    });
-    this.products.listProducts2().subscribe(data => {
-      // Ac
-      this.arrivedProducts2 = data;
-      console.log(data);
-    });
-    this.products.listProducts3().subscribe(data => {
-      // Fridge
-      this.arrivedProducts3 = data;
-      console.log(data);
-    });
+    // Main GET products
+    this.getallProducts(); // mobiles with pagination
+
+    this.getallProducts1();
+
+    this.getallProducts2();
+
+    this.getallProducts3();
+
     // this.products.getImage1().subscribe(data => {
     //   this.arrivedFiles = data;
     // });
@@ -78,14 +69,75 @@ export class ProductsComponent implements OnInit {
     }
 
     this.likes = 0; // like counter
+
+    this.page();
   }
+
+  // pagination next page
+
+  pageCountUP() {
+    if (this.pageNo === (1 || undefined)) {
+      this.pageNo++;
+    } else if (this.pageNo > 2) {
+      return;
+    } else {
+      this.pageNo++;
+      return this.pageNo;
+    }
+  }
+
+  //pagination previous page
+
+  pageCountDOWN() {
+    if (this.pageNo === 2) {
+      this.pageNo--;
+    } else if (this.pageNo > 2) {
+      return;
+    }
+  }
+
+  // GET All products main
+
+  getallProducts() {
+    this.products.listProducts(this.pageNo).subscribe(data => {
+      // mobiles
+      this.arrivedProducts = data.dataSize;
+      console.log(data);
+    });
+  }
+
+  getallProducts1() {
+    this.products.listProducts1().subscribe(data => {
+      // computers
+      this.arrivedProducts1 = data;
+      console.log(data);
+    });
+  }
+
+  getallProducts2() {
+    this.products.listProducts2().subscribe(data => {
+      // Ac
+      this.arrivedProducts2 = data;
+      console.log(data);
+    });
+  }
+
+  getallProducts3() {
+    this.products.listProducts3().subscribe(data => {
+      // Fridge
+      this.arrivedProducts3 = data;
+      console.log(data);
+    });
+  }
+
+  // switch case logic
 
   setChoice(choice) {
     this.choice = choice;
   }
 
+  // All products Section
   getallProds() {
-    // All products Section
     this.allProducts = [
       this.arrivedProducts,
       this.arrivedProducts1,
@@ -329,5 +381,13 @@ export class ProductsComponent implements OnInit {
         }
       );
     });
+  }
+
+  // Pagination logic
+  page() {
+    //get page number to pass as parameter
+    let url = window.location.href.split("/");
+    this.pageNo = url[4];
+    console.log(this.pageNo);
   }
 }
