@@ -14,3 +14,16 @@ html {
 .container {
   margin-top: 100px;
 }
+
+div.userbio::placeholder {
+  position: relative;
+  top: 0px;
+  left: 0;
+  height: 200px;
+  z-index: 100;
+}
+
+.bio textarea {
+  height: 300px;
+  width: 100%;
+}
