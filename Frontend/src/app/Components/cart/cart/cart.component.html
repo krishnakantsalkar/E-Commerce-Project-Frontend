@@ -12,6 +12,11 @@
       <div class="card">
         <!-- User Cart Header -->
         <header class="card-header">
+          <a
+            class="float-right btn btn-outline-primary"
+            routerLink="/Products/1"
+            >Products</a
+          >
           <h2>User Cart</h2>
           <!-- Empty Cart button if cart items present -->
           <button
@@ -187,7 +192,17 @@
               <!-- Total Value of all cart Items -->
               <h4>Your Total: {{ total1 + total2 + total3 + total4 }}</h4>
               <!-- Checkout button -->
-              <button class="btn btn-danger checkout">Checkout</button>
+              <button
+                class="btn btn-danger checkout"
+                [disabled]="
+                  !cartPageItems &&
+                  !cartPageItems1 &&
+                  !cartPageItems2 &&
+                  !cartPageItems3
+                "
+              >
+                Checkout
+              </button>
             </div>
           </div>
         </article>
