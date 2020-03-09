@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { WOW } from "wowjs/dist/wow";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-root",
@@ -7,8 +8,10 @@ import { WOW } from "wowjs/dist/wow";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  title = "Frontend";
+  title = "Shockwave's Assembly";
+  constructor(private titleService: Title) {}
   ngOnInit() {
     new WOW().init();
+    this.titleService.setTitle(this.title);
   }
 }
