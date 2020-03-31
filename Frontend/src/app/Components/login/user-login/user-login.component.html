@@ -60,7 +60,7 @@
                   <div class="form-group">
                     <label>Password</label>
                     <input
-                      class="form-control password-tag"
+                      class="form-control password-tag col-11"
                       type="password"
                       placeholder="Enter Password"
                       formControlName="userPassword"
@@ -71,7 +71,21 @@
                         !newLogin.controls.userLogin.controls.userPassword
                           .valid && submitted
                       "
-                    />
+                      [type]="showpass ? 'text' : 'password'"
+                    /><span>
+                      <button
+                        class="showpassbtn btn btn-primary"
+                        type="button"
+                        (click)="showPass()"
+                        [ngClass]="{ 'btn-danger': showpass }"
+                      >
+                        <i
+                          class="fa fa-eye"
+                          aria-hidden="true"
+                          [ngClass]="{ 'fa-eye-slash': showpass }"
+                        ></i>
+                      </button>
+                    </span>
                     <div class="valid-feedback">
                       looking good!
                     </div>
@@ -79,7 +93,7 @@
                       Check your password!
                     </div>
                     <div
-                      class="alert alert-danger"
+                      class="alert alert-danger col-11"
                       *ngIf="
                         newLogin.controls.userLogin.controls.userPassword.hasError(
                           'required'
