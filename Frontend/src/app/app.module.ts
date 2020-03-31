@@ -13,15 +13,15 @@ import { HttpClientModule } from "@angular/common/http"; //Api consumption , use
 import { FormsModule, ReactiveFormsModule } from "@angular/forms"; //Registration
 
 import { FloatingCartComponent } from "./Components/floating-cart/floating-cart.component";
-import { RssfeedComponent } from "./Components/rssfeed/rssfeed/rssfeed.component";
+
+// import { RssfeedComponent } from "./Components/rssfeed/rssfeed/rssfeed.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavigationComponent,
-    FloatingCartComponent,
-    RssfeedComponent
+    FloatingCartComponent
   ],
   imports: [
     BrowserModule,
