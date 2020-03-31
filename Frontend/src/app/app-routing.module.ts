@@ -16,30 +16,43 @@ const routes: Route[] = [
   },
   {
     path: "Products/:page", // Products routing
-    loadChildren: "./Components/products/products.module#ProductsModule",
+    loadChildren: () =>
+      import("./Components/products/products.module").then(
+        m => m.ProductsModule
+      ),
     canActivate: [authGuard]
   },
   {
     path: "UserLogin", // userlogin routing
-    loadChildren: "./Components/login/login.module#LoginModule"
+    loadChildren: () =>
+      import("./Components/login/login.module").then(m => m.LoginModule)
   },
   {
     path: "UserRegistration", // user registration routing
-    loadChildren:
-      "./Components/registration/registration.module#RegistrationModule"
+    loadChildren: () =>
+      import("./Components/registration/registration.module").then(
+        m => m.RegistrationModule
+      )
   },
   {
     path: "About", // about routing
-    loadChildren: "./Components/about/about.module#AboutModule"
+    loadChildren: () =>
+      import("./Components/about/about.module").then(m => m.AboutModule)
   },
   {
     path: "ContactUs", // contact us routing
-    loadChildren: "./Components/contact-us/contact-us.module#ContactUsModule",
+    loadChildren: () =>
+      import("./Components/contact-us/contact-us.module").then(
+        m => m.ContactUsModule
+      ),
     canActivate: [authGuard]
   },
   {
     path: "MyProfile", //my profile routing
-    loadChildren: "./Components/myprofile/myprofile.module#MyprofileModule",
+    loadChildren: () =>
+      import("./Components/myprofile/myprofile.module").then(
+        m => m.MyprofileModule
+      ),
     canActivate: [authGuard]
   },
 
@@ -47,30 +60,39 @@ const routes: Route[] = [
 
   {
     path: "Products/:id", //mobiles
-    loadChildren:
-      "./Components/single-product1/single-product1.module#SingleProduct1Module"
+    loadChildren: () =>
+      import("./Components/single-product1/single-product1.module").then(
+        m => m.SingleProduct1Module
+      )
   },
   {
     path: "Products/product1/:id", // computers
-    loadChildren:
-      "./Components/single-product2/single-product2.module#SingleProduct2Module"
+    loadChildren: () =>
+      import("./Components/single-product2/single-product2.module").then(
+        m => m.SingleProduct2Module
+      )
   },
   {
     path: "Products/product2/:id", // Ac
-    loadChildren:
-      "./Components/single-product3/single-product3.module#SingleProduct3Module"
+    loadChildren: () =>
+      import("./Components/single-product3/single-product3.module").then(
+        m => m.SingleProduct3Module
+      )
   },
   {
     path: "Products/product3/:id", //fridge
-    loadChildren:
-      "./Components/single-product4/single-product4.module#SingleProduct4Module"
+    loadChildren: () =>
+      import("./Components/single-product4/single-product4.module").then(
+        m => m.SingleProduct4Module
+      )
   },
 
   // Cart Page Routes
 
   {
     path: "Cart",
-    loadChildren: "./Components/cart/cart.module#CartModule",
+    loadChildren: () =>
+      import("./Components/cart/cart.module").then(m => m.CartModule),
     canActivate: [authGuard]
   },
 
@@ -78,21 +100,28 @@ const routes: Route[] = [
 
   {
     path: "Wishlist",
-    loadChildren: "./Components/wishlist/wishlist.module#WishlistModule"
+    loadChildren: () =>
+      import("./Components/wishlist/wishlist.module").then(
+        m => m.WishlistModule
+      )
   },
 
   // Forgot Password Routes
 
   {
     path: "ForgotPassword",
-    loadChildren:
-      "./Components/forgotpassword/forgotpassword.module#ForgotpasswordModule"
+    loadChildren: () =>
+      import("./Components/forgotpassword/forgotpassword.module").then(
+        m => m.ForgotpasswordModule
+      )
   },
 
   {
     path: "ResetPassword/:id",
-    loadChildren:
-      "./Components/resetpassword/resetpassword.module#ResetpasswordModule"
+    loadChildren: () =>
+      import("./Components/resetpassword/resetpassword.module").then(
+        m => m.ResetpasswordModule
+      )
   }
 ];
 
