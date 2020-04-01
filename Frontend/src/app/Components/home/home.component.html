@@ -314,16 +314,25 @@
               (click)="likeHeart()"
             ></span>
           </button> -->
-          <!-- Weather Widget -->
-          <div class="weather"><a class="weatherwidget-io" href="https://forecast7.com/en/19d0872d88/mumbai/" data-label_1="MUMBAI" data-label_2="WEATHER" data-theme="original" >MUMBAI WEATHER</a></div>
-<p align='center'>Weather Widget by Weatherwidget.io</p>
+            <!-- Weather Widget -->
+            <div class="weather">
+              <a
+                class="weatherwidget-io"
+                href="https://forecast7.com/en/19d0872d88/mumbai/"
+                data-label_1="MUMBAI"
+                data-label_2="WEATHER"
+                data-theme="original"
+                >MUMBAI WEATHER</a
+              >
+            </div>
+            <p align="center">Weather Widget by Weatherwidget.io</p>
           </div>
         </div>
         <div class="col-md-9">
           <div class="content-area">
             <div class="container">
               <!-- Rss-feed -->
-              <app-rssfeed></app-rssfeed>
+              <h1>Content to be added later!</h1>
             </div>
           </div>
         </div>
@@ -338,7 +347,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="footer-about-us">
               <h2><span>$h0©kw@v€'s Collection</span></h2>
-             
+
               <p>It'll Blow you Away!</p>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -348,8 +357,14 @@
                 debitis, quisquam. Laborum commodi veritatis magni at?
               </p>
               <div class="footer-social">
-                <a href="https://www.facebook.com/Supremegod.of.war/" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/Rohan_Salkar" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a
+                  href="https://www.facebook.com/Supremegod.of.war/"
+                  target="_blank"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+                <a href="https://twitter.com/Rohan_Salkar" target="_blank"
+                  ><i class="fa fa-twitter"></i
+                ></a>
                 <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
                 <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
               </div>
@@ -434,6 +449,15 @@
     <!-- End footer bottom area -->
   </body>
   <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-    </script>
-  </html>
+    !(function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://weatherwidget.io/js/widget.min.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }
+    })(document, "script", "weatherwidget-io-js");
+  </script>
+</html>

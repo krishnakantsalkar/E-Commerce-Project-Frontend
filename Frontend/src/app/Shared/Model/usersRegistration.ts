@@ -15,4 +15,5 @@ export interface IuserReg {
 
   token?: string;
   message?: string;
+  _id?: string;
 }

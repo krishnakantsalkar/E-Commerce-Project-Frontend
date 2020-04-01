@@ -39,10 +39,15 @@ export class ForgotpasswordComponent implements OnInit {
         alert("Email Sent Successfully!");
         this.router.navigateByUrl("/Home");   // navigate to home and wait for mail
       },
-      err => {        // error handling
+      err => {
+        // error handling
         console.log(err);
-        alert(err.error.message)
+        alert(err.error.message);
       }
     );
+  }
+
+  get f() {
+    return this.forgotForm.controls;
   }
 }

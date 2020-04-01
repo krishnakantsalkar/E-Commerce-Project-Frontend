@@ -15,12 +15,14 @@ export class UserLoginComponent implements OnInit {
   public submitted: boolean;
   public userId;
   public validateError: string; //error checking
-  public showpass : boolean
+  public showpass: boolean;
   constructor(
     private UL: userLoginData,  // login API
     private fb: FormBuilder,
     private router: Router
-  ) { this.showpass = false}
+  ) {
+    this.showpass = false;
+  }
 
   ngOnInit() {
     new WOW({ live: false }).init(); // Wow Animations on Html
@@ -53,7 +55,11 @@ export class UserLoginComponent implements OnInit {
     );
   }
 
-  showPass(){
-    this.showpass= !this.showpass
+  showPass() {
+    this.showpass = !this.showpass;
+  }
+
+  get f() {
+    return this.newLogin.controls;
   }
 }

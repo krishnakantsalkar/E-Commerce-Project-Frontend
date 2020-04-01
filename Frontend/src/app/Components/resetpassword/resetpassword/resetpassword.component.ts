@@ -12,6 +12,7 @@ import { Router } from "@angular/router";
 export class ResetpasswordComponent implements OnInit {
   public resetForm: FormGroup;  // formGroup for Reactive Forms
   public url: any[];   // store token from mail's url to be used below
+  public submitted: boolean;
   constructor(
     private fb: FormBuilder,    // form builder
     private forgotData: forgotPasswordData,  // forgot pass services
@@ -49,5 +50,9 @@ export class ResetpasswordComponent implements OnInit {
 
   getURL() {   // 2 - this method splits and save url items in array
     this.url = window.location.href.split("/");
+  }
+
+  get f() {
+    return this.resetForm.controls;
   }
 }

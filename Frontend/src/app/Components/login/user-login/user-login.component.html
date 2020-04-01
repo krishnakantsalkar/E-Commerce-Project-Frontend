@@ -31,12 +31,9 @@
                     type="email"
                     placeholder="Enter Email ID"
                     formControlName="userEmail"
-                    [class.is-valid]="
-                      newLogin.controls.userLogin.controls.userEmail.valid
-                    "
+                    [class.is-valid]="newLogin.get('userLogin.userEmail').valid"
                     [class.is-invalid]="
-                      !newLogin.controls.userLogin.controls.userEmail.valid &&
-                      submitted
+                      !newLogin.get('userLogin.userEmail').valid && submitted
                     "
                   />
                   <div class="valid-feedback">
@@ -48,10 +45,8 @@
                   <div
                     class="alert alert-danger"
                     *ngIf="
-                      newLogin.controls.userLogin.controls.userEmail.hasError(
-                        'required'
-                      ) &&
-                      newLogin.controls.userLogin.controls.userEmail.touched
+                      newLogin.get('userLogin.userEmail').errors?.required &&
+                      newLogin.get('userLogin.userEmail').touched
                     "
                   >
                     Email id is required!
@@ -65,11 +60,11 @@
                       placeholder="Enter Password"
                       formControlName="userPassword"
                       [class.is-valid]="
-                        newLogin.controls.userLogin.controls.userPassword.valid
+                        newLogin.get('userLogin.userPassword').valid
                       "
                       [class.is-invalid]="
-                        !newLogin.controls.userLogin.controls.userPassword
-                          .valid && submitted
+                        !newLogin.get('userLogin.userPassword').valid &&
+                        submitted
                       "
                       [type]="showpass ? 'text' : 'password'"
                     /><span>
@@ -95,11 +90,9 @@
                     <div
                       class="alert alert-danger col-11"
                       *ngIf="
-                        newLogin.controls.userLogin.controls.userPassword.hasError(
-                          'required'
-                        ) &&
-                        newLogin.controls.userLogin.controls.userPassword
-                          .touched
+                        newLogin.get('userLogin.userPassword').errors
+                          ?.required &&
+                        newLogin.get('userLogin.userPassword').touched
                       "
                     >
                       Password is required!

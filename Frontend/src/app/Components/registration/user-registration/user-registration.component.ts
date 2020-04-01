@@ -25,6 +25,7 @@ export class UserRegistrationComponent implements OnInit {
 
   ngOnInit() {
     new WOW({ live: false }).init(); // Wow Animations in HTML
+
     this.userForm = this.fb.group({
       //main form group
       firstname: [
@@ -76,5 +77,9 @@ export class UserRegistrationComponent implements OnInit {
         alert("Check entered data or Email Id alredy exists");
       }
     );
+  }
+
+  get f() {
+    return this.userForm.controls;
   }
 }
