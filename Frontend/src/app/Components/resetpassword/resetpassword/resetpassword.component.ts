@@ -10,12 +10,12 @@ import { Router } from "@angular/router";
   styleUrls: ["./resetpassword.component.css"]
 })
 export class ResetpasswordComponent implements OnInit {
-  public resetForm: FormGroup;  // formGroup for Reactive Forms
-  public url: any[];   // store token from mail's url to be used below
+  public resetForm: FormGroup; // formGroup for Reactive Forms
+  public url: any[]; // store token from mail's url to be used below
   public submitted: boolean;
   constructor(
-    private fb: FormBuilder,    // form builder
-    private forgotData: forgotPasswordData,  // forgot pass services
+    private fb: FormBuilder, // form builder
+    private forgotData: forgotPasswordData, // forgot pass services
     private router: Router
   ) {}
 
@@ -26,16 +26,16 @@ export class ResetpasswordComponent implements OnInit {
       })
     });
 
-    this.getURL();  // 1 - custom method to get token that was sent in mail as url
+    this.getURL(); // 1 - custom method to get token that was sent in mail as url
   }
 
   Save(data: IresetPassword) {
     // 3 - pass the 4th index which contains token to parameterized routing's id
-    let id = this.url[4];   
+    let id = this.url[4];
     console.log(id, data);
 
     // 4 - since we need both id(token) and form data for reset password
-    this.forgotData.resetPassword(id, data).subscribe(  
+    this.forgotData.resetPassword(id, data).subscribe(
       item => {
         console.log(item);
         alert("Password Changed Successfully");
@@ -48,7 +48,8 @@ export class ResetpasswordComponent implements OnInit {
     );
   }
 
-  getURL() {   // 2 - this method splits and save url items in array
+  getURL() {
+    // 2 - this method splits and save url items in array
     this.url = window.location.href.split("/");
   }
 

@@ -17,7 +17,7 @@ export class UserLoginComponent implements OnInit {
   public validateError: string; //error checking
   public showpass: boolean;
   constructor(
-    private UL: userLoginData,  // login API
+    private UL: userLoginData, // login API
     private fb: FormBuilder,
     private router: Router
   ) {
@@ -26,16 +26,19 @@ export class UserLoginComponent implements OnInit {
 
   ngOnInit() {
     new WOW({ live: false }).init(); // Wow Animations on Html
-    this.newLogin = this.fb.group({         //Reactive forms method
+    this.newLogin = this.fb.group({
+      //Reactive forms method
       userLogin: this.fb.group({
         userEmail: ["", [Validators.required, Validators.email]],
-        userPassword: ["", [Validators.required, Validators.minLength(8)]]   //Validation
+        userPassword: ["", [Validators.required, Validators.minLength(8)]] //Validation
       })
     });
   }
-  Save(data: IuserLogin) {      //Save method on ngSubmit
+  Save(data: IuserLogin) {
+    //Save method on ngSubmit
     this.submitted = true;
-    if (!this.newLogin.valid) {   // if login form not valid , return
+    if (!this.newLogin.valid) {
+      // if login form not valid , return
       return;
     }
     console.log(data);

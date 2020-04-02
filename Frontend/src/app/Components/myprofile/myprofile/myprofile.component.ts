@@ -14,8 +14,9 @@ export class MyprofileComponent implements OnInit {
   constructor(private UL: userLoginData) {}
 
   ngOnInit() {
-    new WOW({ live: false }).init();      //enable wow animations
-    this.UL.myProfile().subscribe(item => {       // get profile data by id of loggedin user
+    new WOW({ live: false }).init(); //enable wow animations
+    this.UL.myProfile().subscribe(item => {
+      // get profile data by id of loggedin user
       this.arrivedUsers = item;
       console.log(item);
     });

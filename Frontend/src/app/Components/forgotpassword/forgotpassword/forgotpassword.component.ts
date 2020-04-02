@@ -10,10 +10,10 @@ import { Router } from "@angular/router";
   styleUrls: ["./forgotpassword.component.css"]
 })
 export class ForgotpasswordComponent implements OnInit {
-  public forgotForm: FormGroup;  // formGroup for Reactive Forms
+  public forgotForm: FormGroup; // formGroup for Reactive Forms
   public submitted: boolean;
   constructor(
-    private fb: FormBuilder,  //form builder
+    private fb: FormBuilder, //form builder
     private forgotData: forgotPasswordData, // forgotpass services
     private router: Router
   ) {}
@@ -32,12 +32,12 @@ export class ForgotpasswordComponent implements OnInit {
       // if login form not valid , return
       return;
     }
-    console.log(data);     // send mail for password reset token
+    console.log(data); // send mail for password reset token
     this.forgotData.resetPasswordMailer(data).subscribe(
       item => {
         console.log(item);
         alert("Email Sent Successfully!");
-        this.router.navigateByUrl("/Home");   // navigate to home and wait for mail
+        this.router.navigateByUrl("/Home"); // navigate to home and wait for mail
       },
       err => {
         // error handling

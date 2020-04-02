@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SingleProduct4Component } from './single-product4.component';
+import { SingleProduct4Component } from "./single-product4.component";
 
-describe('SingleProduct4Component', () => {
+describe("SingleProduct4Component", () => {
   let component: SingleProduct4Component;
   let fixture: ComponentFixture<SingleProduct4Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SingleProduct4Component ]
-    })
-    .compileComponents();
+      declarations: [SingleProduct4Component]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('SingleProduct4Component', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

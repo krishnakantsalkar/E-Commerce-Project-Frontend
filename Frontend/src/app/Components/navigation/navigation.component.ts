@@ -13,10 +13,11 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     this.logoutMethod.currentUsers.subscribe(data => {
-      this.checkStatus = data;                   // method to show some nav tab only if user logged in
+      this.checkStatus = data; // method to show some nav tab only if user logged in
     });
   }
-  Logout() {     // logout method
+  Logout() {
+    // logout method
     this.logoutMethod.Logout();
     this.router.navigateByUrl("/Home");
   }

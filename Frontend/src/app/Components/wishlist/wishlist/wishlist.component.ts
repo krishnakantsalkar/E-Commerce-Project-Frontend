@@ -6,8 +6,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./wishlist.component.css"]
 })
 export class WishlistComponent implements OnInit {
-  public wishlistItems;   
-  public wishlistItems1;       // store wishlist items in these properties
+  public wishlistItems;
+  public wishlistItems1; // store wishlist items in these properties
   public wishlistItems2;
   public wishlistItems3;
   constructor() {}
@@ -15,7 +15,7 @@ export class WishlistComponent implements OnInit {
   ngOnInit() {
     this.wishlistItems = JSON.parse(localStorage.getItem("wishlist"));
 
-    this.wishlistItems1 = JSON.parse(localStorage.getItem("wishlist1"));    // get wishlist items stored in storage
+    this.wishlistItems1 = JSON.parse(localStorage.getItem("wishlist1")); // get wishlist items stored in storage
 
     this.wishlistItems2 = JSON.parse(localStorage.getItem("wishlist2"));
 
@@ -25,7 +25,7 @@ export class WishlistComponent implements OnInit {
   removeItem() {
     localStorage.removeItem("wishlist");
     localStorage.removeItem("wishlist1");
-    localStorage.removeItem("wishlist2");    //remove all wishlist items together
+    localStorage.removeItem("wishlist2"); //remove all wishlist items together
     localStorage.removeItem("wishlist3");
     location.reload();
   }
@@ -35,7 +35,7 @@ export class WishlistComponent implements OnInit {
     location.reload();
   }
   removeItem2() {
-    localStorage.removeItem("wishlist1");  // remove wishlist items separately
+    localStorage.removeItem("wishlist1"); // remove wishlist items separately
     location.reload();
   }
   removeItem3() {
